@@ -34,7 +34,7 @@ Feature: SCUBA benchmark case sales_003_004 - Create a lead
   Scenario: Sales user creates the lead David Rodriguez from Pinnacle Systems
     Given I am signed in to the Salesforce Lightning app
     When I click the "App Launcher" button
-    And I search and select "Leads" in the "Search apps and items..." combobox in the App Launcher
+    And I click the "Leads" item in the App Launcher
     And I wait until the "Recently Viewed" list view for Leads is ready
     And I click the "New" button on the Leads list
     And I wait until the "New Lead" modal is ready
@@ -70,9 +70,10 @@ Every file must:
   - scope duplicates by modal, panel, section or tab;
   - state checkbox states ("ensure … is checked");
   - use exact picklist options;
-  - open an App Launcher item with one step, `search and select "<item>" in the
-    "Search apps and items..." combobox in the App Launcher`: the launcher
-    search is a combobox, so searching and choosing the item is one action;
+  - open an App Launcher item by clicking the "App Launcher" button and then
+    `click the "<item>" item in the App Launcher`. Do not type into "Search apps
+    and items..." as a separate step: choosing a launcher item navigates away, so
+    a search step cannot be proved by the field's value;
   - wait for an observable state only when the next step needs it;
   - use `Then` only for the assertions that decide the test.
 - Use only the public task: its `query` and `instance_dict`. Never use

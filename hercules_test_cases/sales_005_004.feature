@@ -6,7 +6,7 @@ Feature: SCUBA benchmark case sales_005_004 - Log an activity and update the opp
   Scenario: Sales user logs the activity on Consulting Service and moves it to Proposal/Price Quote
     Given I am signed in to the Salesforce Lightning app
     When I click the "App Launcher" button
-    And I search and select "Opportunities" in the "Search apps and items..." combobox in the App Launcher
+    And I click the "Opportunities" item in the App Launcher
     And I wait until the "Recently Viewed" list view for Opportunities is ready
     And I search for "Consulting Service" in the "Search this list..." search field
     And I click the "Consulting Service" link in the Opportunities list

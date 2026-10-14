@@ -20,7 +20,7 @@ Feature: SCUBA benchmark case sales_006_003 - Create a product family and its pr
     And I wait until the "Values" section lists "Electric Bike"
     And I switch to the Salesforce Lightning app browser tab
     And I click the "App Launcher" button
-    And I search and select "Products" in the "Search apps and items..." combobox in the App Launcher
+    And I click the "Products" item in the App Launcher
     And I click the "New" button on the Products list
     And I wait until the "New Product" modal is ready
     And I fill "CityCruze" in the "Product Name" text field
@@ -31,7 +31,7 @@ Feature: SCUBA benchmark case sales_006_003 - Create a product family and its pr
     And I click the "Save" button in the "New Product" modal
     And I wait until the Product record page opens
     And I click the "App Launcher" button
-    And I search and select "Products" in the "Search apps and items..." combobox in the App Launcher
+    And I click the "Products" item in the App Launcher
     And I select "All Products" from the "Select a List View" picklist
     And I wait until the "All Products" list view is ready
     Then the "All Products" list should show the product "CityCruze" with Product Family "Electric Bike" and Product Code "CityCruze"
