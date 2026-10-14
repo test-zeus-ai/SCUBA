@@ -1,16 +1,34 @@
-Feature: SCUBA benchmark case sales_004_003
-  Original request: Convert the lead for Alice Johnson to 'Closed - Converted'. If the company on her lead corresponds to an existing Account, select that Account; otherwise, create a new Account named exactly as the lead’s company. After that, set up a new Opportunity called Innovate Ltd Opportunity.
+Feature: SCUBA benchmark case sales_004_003 - Convert a lead
 
-  Scenario: Convert the lead Alice Johnson and create the opportunity Innovate Ltd Opportunity
-    Given the Salesforce Lightning app is open and I am signed in to the benchmark organization
-    When I click the App Launcher, search for "Leads" and open the Leads tab
-    And I search the list for "Alice Johnson" and open the lead "Alice Johnson"
-    And I note the value of the lead's "Company" field
-    And I click the "Convert" button on the lead record page
-    And in the Convert Lead dialog Account section, if an existing Account whose name matches the lead's Company is offered, I choose "Choose Existing" and select that Account; otherwise I choose "Create New" and keep the Account Name equal to the lead's Company
-    And in the Opportunity section I choose "Create New" and enter "Innovate Ltd Opportunity" as the Opportunity Name
-    And I make sure "Don't create an opportunity upon conversion" is not checked
-    And I select "Closed - Converted" in the "Converted Status" field
-    And I click the "Convert" button in the dialog
-    Then the conversion confirmation shows the lead "Alice Johnson" was converted with an Account and the Opportunity "Innovate Ltd Opportunity"
-    And Test Ended
+  # Original request: Convert the lead for Alice Johnson to 'Closed - Converted'. If the company on her lead corresponds to an existing Account, select that Account; otherwise, create a new Account named exactly as the lead’s company. After that, set up a new Opportunity called Innovate Ltd Opportunity.
+
+  Scenario: Sales user converts the lead Alice Johnson and creates the opportunity Innovate Ltd Opportunity
+    Given I am signed in to the Salesforce Lightning app
+    When I click the "App Launcher" button
+    And I search for "Leads" in the "Search apps and items..." search field
+    And I click the "Leads" link in the App Launcher
+    And I wait until the "Recently Viewed" list view for Leads is ready
+    And I search for "Alice Johnson" in the "Search this list..." search field
+    And I click the "Alice Johnson" link in the Leads list
+    And I wait until the Lead record page for "Alice Johnson" opens
+    START IF the "Convert" button is visible on the Lead record page
+      When I click the "Convert" button on the Lead record page
+    ELSE
+      When I open the "Show more actions" menu on the Lead record page
+      And I click "Convert" in that menu
+    END IF
+    And I wait until the "Convert Lead" modal is ready
+    START IF the "Account" section of the "Convert Lead" modal lists an existing Account whose name matches the lead's Company
+      When I select the option "Choose Existing" in the "Account" section
+      And I select the existing Account whose name matches the lead's Company in the "Account" section
+    ELSE
+      When I select the option "Create New" in the "Account" section
+      And I ensure the "Account Name" text field in the "Account" section contains the lead's Company
+    END IF
+    And I select the option "Create New" in the "Opportunity" section
+    And I replace the value in the "Opportunity Name" text field in the "Opportunity" section with "Innovate Ltd Opportunity"
+    And I ensure the "Don't create an opportunity upon conversion" checkbox is unchecked
+    And I select "Closed - Converted" from the "Converted Status" picklist in the "Convert Lead" modal
+    And I click the "Convert" button in the "Convert Lead" modal
+    And I wait until the "Your lead has been converted" message is visible
+    Then the "Your lead has been converted" message should list the Account and the Opportunity "Innovate Ltd Opportunity"

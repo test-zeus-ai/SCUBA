@@ -10,6 +10,9 @@ explicit steps, so each request is written out here as the UI actions that
 fulfil it. Grading is unchanged: SCUBA's own evaluator checks the resulting
 Salesforce state.
 
+Every case follows the TestZeus authoring standard in [AGENTS.md](AGENTS.md)
+(the TestZeus rulebook) and the live guides it links to.
+
 ## Layout
 
 One file per task, named after its SCUBA `task_id`:
@@ -23,28 +26,49 @@ Tasks without a file here have not been written yet.
 ## Format
 
 ```gherkin
-Feature: SCUBA benchmark case sales_003_004
-  Original request: <the task's query, verbatim, whitespace collapsed>
+Feature: SCUBA benchmark case sales_003_004 - Create a lead
+
+  # Original request: <the task's query, verbatim, whitespace collapsed>
   # Interpretation: Rating "Hot" <- "seemed very engaged"
 
-  Scenario: <short description>
-    Given the Salesforce Lightning app is open and I am signed in to the benchmark organization
-    When <first UI action>
-    And <next UI action>
-    Then <read back the resulting record state>
-    And Test Ended
+  Scenario: Sales user creates the lead David Rodriguez from Pinnacle Systems
+    Given I am signed in to the Salesforce Lightning app
+    When I click the "App Launcher" button
+    And I search for "Leads" in the "Search apps and items..." search field
+    And I click the "Leads" link in the App Launcher
+    And I wait until the "Recently Viewed" list view for Leads is ready
+    And I click the "New" button on the Leads list
+    And I wait until the "New Lead" modal is ready
+    And I fill "David" in the "First Name" text field
+    And I select "Hot" from the "Rating" picklist
+    And I click the "Save" button in the "New Lead" modal
+    And I wait until the Lead record page opens
+    Then the Lead record page should show "David Rodriguez" with Company "Pinnacle Systems"
 ```
 
 Every file must:
 
-- start with `Feature: SCUBA benchmark case <task_id>`;
-- quote the task's `query` verbatim on the `Original request:` line;
-- contain exactly one scenario that starts from the sign-in `Given` above,
-  performs the task with `When`/`And` steps, verifies it with `Then` steps, and
-  ends with `And Test Ended`.
+- start with `Feature: SCUBA benchmark case <task_id> - <short title>`;
+- carry the task's `query` verbatim (whitespace collapsed) in a
+  `# Original request:` comment;
+- contain exactly one `Scenario` that starts from
+  `Given I am signed in to the Salesforce Lightning app`, performs the task with
+  `When`/`And` steps and ends with `Then` assertions;
+- use only `Feature`, `Scenario`, `Given`, `When`, `Then`, `And`, `But`, `#`
+  comments and the TestZeus `START IF` / `ELSE` / `END IF` and one-line `If …`
+  conditionals — no `Background`, `Scenario Outline`, `Examples`, `Rule`, doc
+  strings or inline tags;
+- not add an end-of-test marker: the runner adds it.
 
 ## Rules for writing a case
 
+- Follow [AGENTS.md](AGENTS.md):
+  - name every control by its visible label and component type;
+  - scope duplicates by modal, panel, section or tab;
+  - state checkbox states ("ensure … is checked");
+  - use exact picklist options;
+  - wait for an observable state only when the next step needs it;
+  - use `Then` only for the assertions that decide the test.
 - Use only the public task: its `query` and `instance_dict`. Never use
   `ground_truth_dict` or the evaluator to decide a step or a value.
 - Keep every record name, literal value, relationship and status from the
@@ -54,11 +78,9 @@ Every file must:
   on an `# Interpretation:` line: `<field> "<value>" <- "<public phrase>"`.
   An undeclared value that is not stated in the request is rejected when the
   cases are packaged.
-- Prefer one concrete UI action per step: open the object from the App
-  Launcher, click a named button, enter or select a named field, save.
 - Keep conditional choices that the request itself states (for example "if the
-  company already exists as an Account, use it; otherwise create one") in a
-  single step.
+  company already exists as an Account, use it; otherwise create one") as a
+  `START IF` / `ELSE` / `END IF` block with an observable condition.
 - Do not include organization URLs, usernames, record IDs or credentials. The
   sign-in step is supplied by the runner.
 

@@ -1,17 +1,27 @@
-Feature: SCUBA benchmark case sales_005_001
-  Original request: For the opportunity Cloud Software Deal, Schedule an event for meeting with the client to discuss implementation timeline. Update the opportunity stage to Value Proposition.
+Feature: SCUBA benchmark case sales_005_001 - Log an activity and update the opportunity stage
+
+  # Original request: For the opportunity Cloud Software Deal, Schedule an event for meeting with the client to discuss implementation timeline. Update the opportunity stage to Value Proposition.
   # Interpretation: Event Subject "Meeting with the client to discuss implementation timeline" <- "Schedule an event for meeting with the client to discuss implementation timeline"
 
-  Scenario: Schedule a client meeting event on Cloud Software Deal and move it to Value Proposition
-    Given the Salesforce Lightning app is open and I am signed in to the benchmark organization
-    When I click the App Launcher, search for "Opportunities" and open the Opportunities tab
-    And I search the list for "Cloud Software Deal" and open the opportunity "Cloud Software Deal"
-    And in the Activity panel I click "New Event"
-    And I enter "Meeting with the client to discuss implementation timeline" in the "Subject" field
-    And I click "Save" in the event composer
-    And I click the pencil icon on the "Stage" field of the opportunity details
-    And I select "Value Proposition" in the "Stage" field
-    And I click "Save"
-    Then the opportunity "Cloud Software Deal" shows Stage "Value Proposition"
-    And the Activity timeline lists the event "Meeting with the client to discuss implementation timeline"
-    And Test Ended
+  Scenario: Sales user logs the activity on Cloud Software Deal and moves it to Value Proposition
+    Given I am signed in to the Salesforce Lightning app
+    When I click the "App Launcher" button
+    And I search for "Opportunities" in the "Search apps and items..." search field
+    And I click the "Opportunities" link in the App Launcher
+    And I wait until the "Recently Viewed" list view for Opportunities is ready
+    And I search for "Cloud Software Deal" in the "Search this list..." search field
+    And I click the "Cloud Software Deal" link in the Opportunities list
+    And I wait until the Opportunity record page for "Cloud Software Deal" opens
+    And I open the "Activity" tab on the Opportunity record page
+    And I click the "New Event" button in the "Activity" tab
+    And I wait until the "New Event" panel is ready
+    And I fill "Meeting with the client to discuss implementation timeline" in the "Subject" field in the "New Event" panel
+    And I click the "Save" button in the "New Event" panel
+    And I wait until the "New Event" panel closes
+    And I open the "Details" tab on the Opportunity record page
+    And I click the "Edit Stage" button in the "Details" tab
+    And I select "Value Proposition" from the "Stage" picklist
+    And I click the "Save" button in the "Details" tab
+    And I wait until the "Stage" field in the "Details" tab is no longer editable
+    Then the "Stage" field in the "Details" tab should show "Value Proposition"
+    And the "Activity" tab should list the event "Meeting with the client to discuss implementation timeline"

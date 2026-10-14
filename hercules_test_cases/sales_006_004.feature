@@ -1,34 +1,52 @@
-Feature: SCUBA benchmark case sales_006_004
-  Original request: The Smart Home Security product family offers advanced solutions for home protection and monitoring.. SmartLock Pro for advanced door security, WatchCam 360 for comprehensive surveillance, and AlertSense for motion detection and alerts. Help me to create the relevant info in the Product records.
+Feature: SCUBA benchmark case sales_006_004 - Create a product family and its products
 
-  Scenario: Create the Smart Home Security product family and its three products
-    Given the Salesforce Lightning app is open and I am signed in to the benchmark organization
-    When I click the gear icon and open "Setup"
-    And I open the "Object Manager" tab and open the object "Product"
-    And I open "Fields & Relationships" and click the field "Product Family"
-    And in the "Values" section I click "New"
-    And I enter "Smart Home Security" as the new picklist value and click "Save"
-    And I click the App Launcher, search for "Products" and open the Products tab
-    And I click the "New" button
-    And I enter "SmartLock Pro" in the "Product Name" field
-    And I select "Smart Home Security" in the "Product Family" field
-    And I enter "advanced door security" in the "Product Description" field
-    And I check the "Active" checkbox
-    And I click "Save"
-    And I return to the Products tab
-    And I click the "New" button
-    And I enter "WatchCam 360" in the "Product Name" field
-    And I select "Smart Home Security" in the "Product Family" field
-    And I enter "comprehensive surveillance" in the "Product Description" field
-    And I check the "Active" checkbox
-    And I click "Save"
-    And I return to the Products tab
-    And I click the "New" button
-    And I enter "AlertSense" in the "Product Name" field
-    And I select "Smart Home Security" in the "Product Family" field
-    And I enter "motion detection and alerts" in the "Product Description" field
-    And I check the "Active" checkbox
-    And I click "Save"
-    And I return to the Products tab
-    Then the Products list shows "SmartLock Pro", "WatchCam 360" and "AlertSense" in Product Family "Smart Home Security"
-    And Test Ended
+  # Original request: The Smart Home Security product family offers advanced solutions for home protection and monitoring.. SmartLock Pro for advanced door security, WatchCam 360 for comprehensive surveillance, and AlertSense for motion detection and alerts. Help me to create the relevant info in the Product records.
+
+  Scenario: Sales operations creates the Smart Home Security product family and its products
+    Given I am signed in to the Salesforce Lightning app
+    When I click the "Setup" button in the global header
+    And I click "Setup" in the "Setup" menu
+    And I wait until a "Setup" browser tab opens
+    And I switch to the "Setup" browser tab
+    And I click the "Object Manager" tab in Setup
+    And I search for "Product" in the "Quick Find" search field in Object Manager
+    And I click the "Product" link in the Object Manager list
+    And I click the "Fields & Relationships" link in the Product object sidebar
+    And I click the "Product Family" link in the "Fields & Relationships" list
+    And I click the "New" button in the "Values" section
+    And I wait until the "Add Picklist Values" page is ready
+    And I fill "Smart Home Security" in the picklist values textarea
+    And I click the "Save" button on the "Add Picklist Values" page
+    And I wait until the "Values" section lists "Smart Home Security"
+    And I switch to the Salesforce Lightning app browser tab
+    And I click the "App Launcher" button
+    And I search for "Products" in the "Search apps and items..." search field
+    And I click the "Products" link in the App Launcher
+    And I click the "New" button on the Products list
+    And I wait until the "New Product" modal is ready
+    And I fill "SmartLock Pro" in the "Product Name" text field
+    And I select "Smart Home Security" from the "Product Family" picklist
+    And I fill "advanced door security" in the "Product Description" textarea
+    And I ensure the "Active" checkbox is checked
+    And I click the "Save & New" button in the "New Product" modal
+    And I wait until a new "New Product" modal is ready
+    And I fill "WatchCam 360" in the "Product Name" text field
+    And I select "Smart Home Security" from the "Product Family" picklist
+    And I fill "comprehensive surveillance" in the "Product Description" textarea
+    And I ensure the "Active" checkbox is checked
+    And I click the "Save & New" button in the "New Product" modal
+    And I wait until a new "New Product" modal is ready
+    And I fill "AlertSense" in the "Product Name" text field
+    And I select "Smart Home Security" from the "Product Family" picklist
+    And I fill "motion detection and alerts" in the "Product Description" textarea
+    And I ensure the "Active" checkbox is checked
+    And I click the "Save" button in the "New Product" modal
+    And I wait until the Product record page opens
+    And I click the "App Launcher" button
+    And I search for "Products" in the "Search apps and items..." search field
+    And I click the "Products" link in the App Launcher
+    And I select "All Products" from the "Select a List View" picklist
+    And I wait until the "All Products" list view is ready
+    Then the "All Products" list should show the product "SmartLock Pro" with Product Family "Smart Home Security"
+    And the "All Products" list should show the product "WatchCam 360" with Product Family "Smart Home Security"
+    And the "All Products" list should show the product "AlertSense" with Product Family "Smart Home Security"

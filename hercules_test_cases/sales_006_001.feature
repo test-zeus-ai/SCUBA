@@ -1,29 +1,47 @@
-Feature: SCUBA benchmark case sales_006_001
-  Original request: Our company R&D department announced a new Product Family for "Running Shoes". For this release, we have two products. The first product "ChillRun" with the product code "CHILL-001" is the "best fit for lightweight exercise"; and the second product "MonsterRun" with the product code "MONS-001" is "designed for Marathon fans". Help me to create the relevant info in the Product records.
+Feature: SCUBA benchmark case sales_006_001 - Create a product family and its products
 
-  Scenario: Create the Running Shoes product family and its two products
-    Given the Salesforce Lightning app is open and I am signed in to the benchmark organization
-    When I click the gear icon and open "Setup"
-    And I open the "Object Manager" tab and open the object "Product"
-    And I open "Fields & Relationships" and click the field "Product Family"
-    And in the "Values" section I click "New"
-    And I enter "Running Shoes" as the new picklist value and click "Save"
-    And I click the App Launcher, search for "Products" and open the Products tab
-    And I click the "New" button
-    And I enter "ChillRun" in the "Product Name" field
-    And I enter "CHILL-001" in the "Product Code" field
-    And I select "Running Shoes" in the "Product Family" field
-    And I enter "best fit for lightweight exercise" in the "Product Description" field
-    And I check the "Active" checkbox
-    And I click "Save"
-    And I return to the Products tab
-    And I click the "New" button
-    And I enter "MonsterRun" in the "Product Name" field
-    And I enter "MONS-001" in the "Product Code" field
-    And I select "Running Shoes" in the "Product Family" field
-    And I enter "designed for Marathon fans" in the "Product Description" field
-    And I check the "Active" checkbox
-    And I click "Save"
-    And I return to the Products tab
-    Then the Products list shows "ChillRun" with Product Code "CHILL-001" and "MonsterRun" with Product Code "MONS-001", both in Product Family "Running Shoes"
-    And Test Ended
+  # Original request: Our company R&D department announced a new Product Family for "Running Shoes". For this release, we have two products. The first product "ChillRun" with the product code "CHILL-001" is the "best fit for lightweight exercise"; and the second product "MonsterRun" with the product code "MONS-001" is "designed for Marathon fans". Help me to create the relevant info in the Product records.
+
+  Scenario: Sales operations creates the Running Shoes product family and its products
+    Given I am signed in to the Salesforce Lightning app
+    When I click the "Setup" button in the global header
+    And I click "Setup" in the "Setup" menu
+    And I wait until a "Setup" browser tab opens
+    And I switch to the "Setup" browser tab
+    And I click the "Object Manager" tab in Setup
+    And I search for "Product" in the "Quick Find" search field in Object Manager
+    And I click the "Product" link in the Object Manager list
+    And I click the "Fields & Relationships" link in the Product object sidebar
+    And I click the "Product Family" link in the "Fields & Relationships" list
+    And I click the "New" button in the "Values" section
+    And I wait until the "Add Picklist Values" page is ready
+    And I fill "Running Shoes" in the picklist values textarea
+    And I click the "Save" button on the "Add Picklist Values" page
+    And I wait until the "Values" section lists "Running Shoes"
+    And I switch to the Salesforce Lightning app browser tab
+    And I click the "App Launcher" button
+    And I search for "Products" in the "Search apps and items..." search field
+    And I click the "Products" link in the App Launcher
+    And I click the "New" button on the Products list
+    And I wait until the "New Product" modal is ready
+    And I fill "ChillRun" in the "Product Name" text field
+    And I fill "CHILL-001" in the "Product Code" text field
+    And I select "Running Shoes" from the "Product Family" picklist
+    And I fill "best fit for lightweight exercise" in the "Product Description" textarea
+    And I ensure the "Active" checkbox is checked
+    And I click the "Save & New" button in the "New Product" modal
+    And I wait until a new "New Product" modal is ready
+    And I fill "MonsterRun" in the "Product Name" text field
+    And I fill "MONS-001" in the "Product Code" text field
+    And I select "Running Shoes" from the "Product Family" picklist
+    And I fill "designed for Marathon fans" in the "Product Description" textarea
+    And I ensure the "Active" checkbox is checked
+    And I click the "Save" button in the "New Product" modal
+    And I wait until the Product record page opens
+    And I click the "App Launcher" button
+    And I search for "Products" in the "Search apps and items..." search field
+    And I click the "Products" link in the App Launcher
+    And I select "All Products" from the "Select a List View" picklist
+    And I wait until the "All Products" list view is ready
+    Then the "All Products" list should show the product "ChillRun" with Product Family "Running Shoes" and Product Code "CHILL-001"
+    And the "All Products" list should show the product "MonsterRun" with Product Family "Running Shoes" and Product Code "MONS-001"
