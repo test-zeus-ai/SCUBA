@@ -5,8 +5,7 @@ Feature: SCUBA benchmark case sales_004_003 - Convert a lead
   Scenario: Sales user converts the lead Alice Johnson and creates the opportunity Innovate Ltd Opportunity
     Given I am signed in to the Salesforce Lightning app
     When I click the "App Launcher" button
-    And I search for "Leads" in the "Search apps and items..." search field
-    And I click the "Leads" link in the App Launcher
+    And I search and select "Leads" in the "Search apps and items..." combobox in the App Launcher
     And I wait until the "Recently Viewed" list view for Leads is ready
     And I search for "Alice Johnson" in the "Search this list..." search field
     And I click the "Alice Johnson" link in the Leads list

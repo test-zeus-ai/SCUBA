@@ -6,8 +6,7 @@ Feature: SCUBA benchmark case sales_005_003 - Log an activity and update the opp
   Scenario: Sales user logs the activity on Product Development and moves it to Negotiation/Review
     Given I am signed in to the Salesforce Lightning app
     When I click the "App Launcher" button
-    And I search for "Opportunities" in the "Search apps and items..." search field
-    And I click the "Opportunities" link in the App Launcher
+    And I search and select "Opportunities" in the "Search apps and items..." combobox in the App Launcher
     And I wait until the "Recently Viewed" list view for Opportunities is ready
     And I search for "Product Development" in the "Search this list..." search field
     And I click the "Product Development" link in the Opportunities list

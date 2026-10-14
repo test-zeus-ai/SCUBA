@@ -8,8 +8,7 @@ Feature: SCUBA benchmark case sales_003_005 - Create a lead
   Scenario: Sales user creates the lead Marcus Thompson from FutureTech Dynamics
     Given I am signed in to the Salesforce Lightning app
     When I click the "App Launcher" button
-    And I search for "Leads" in the "Search apps and items..." search field
-    And I click the "Leads" link in the App Launcher
+    And I search and select "Leads" in the "Search apps and items..." combobox in the App Launcher
     And I wait until the "Recently Viewed" list view for Leads is ready
     And I click the "New" button on the Leads list
     And I wait until the "New Lead" modal is ready

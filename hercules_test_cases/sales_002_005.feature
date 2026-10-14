@@ -5,8 +5,7 @@ Feature: SCUBA benchmark case sales_002_005 - Create an account hierarchy
   Scenario: Sales user creates the MegaCorp Financial parent account and its two subsidiary accounts
     Given I am signed in to the Salesforce Lightning app
     When I click the "App Launcher" button
-    And I search for "Accounts" in the "Search apps and items..." search field
-    And I click the "Accounts" link in the App Launcher
+    And I search and select "Accounts" in the "Search apps and items..." combobox in the App Launcher
     And I wait until the "Recently Viewed" list view for Accounts is ready
     And I click the "New" button on the Accounts list
     And I wait until the "New Account" modal is ready
@@ -26,8 +25,7 @@ Feature: SCUBA benchmark case sales_002_005 - Create an account hierarchy
     And I click the "Save" button in the "New Account" modal
     And I wait until the Account record page opens
     And I click the "App Launcher" button
-    And I search for "Accounts" in the "Search apps and items..." search field
-    And I click the "Accounts" link in the App Launcher
+    And I search and select "Accounts" in the "Search apps and items..." combobox in the App Launcher
     And I search for "MegaCorp Financial - Parent" in the "Search this list..." search field
     And I click the "MegaCorp Financial - Parent" link in the Accounts list
     And I wait until the Account record page for "MegaCorp Financial - Parent" opens
