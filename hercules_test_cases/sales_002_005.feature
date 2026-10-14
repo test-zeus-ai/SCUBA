@@ -26,7 +26,7 @@ Feature: SCUBA benchmark case sales_002_005 - Create an account hierarchy
     And I wait until the Account record page opens
     And I click the "App Launcher" button
     And I click the "Accounts" item in the App Launcher
-    And I search for "MegaCorp Financial - Parent" in the "Search this list..." search field
+    And I search for "MegaCorp Financial - Parent" in the "Search this list..." search field and press Enter
     And I click the "MegaCorp Financial - Parent" link in the Accounts list
     And I wait until the Account record page for "MegaCorp Financial - Parent" opens
     And If the "View Account Hierarchy" button is visible on the Account record page, click it; else open the "Show more actions" menu on the Account record page

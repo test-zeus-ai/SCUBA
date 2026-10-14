@@ -7,7 +7,7 @@ Feature: SCUBA benchmark case sales_004_002 - Convert a lead
     When I click the "App Launcher" button
     And I click the "Leads" item in the App Launcher
     And I wait until the "Recently Viewed" list view for Leads is ready
-    And I search for "Jane Smith" in the "Search this list..." search field
+    And I search for "Jane Smith" in the "Search this list..." search field and press Enter
     And I click the "Jane Smith" link in the Leads list
     And I wait until the Lead record page for "Jane Smith" opens
     And If the "Convert" button is visible on the Lead record page, click it; else open the "Show more actions" menu on the Lead record page

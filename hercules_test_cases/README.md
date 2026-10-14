@@ -70,6 +70,9 @@ Every file must:
   - scope duplicates by modal, panel, section or tab;
   - state checkbox states ("ensure … is checked");
   - use exact picklist options;
+  - search a list view with `search for "<value>" in the "Search this list..." search
+    field and press Enter`: a Salesforce list only filters on Enter, so typing alone
+    is not a search;
   - open an App Launcher item by clicking the "App Launcher" button and then
     `click the "<item>" item in the App Launcher`. Do not type into "Search apps
     and items..." as a separate step: choosing a launcher item navigates away, so
