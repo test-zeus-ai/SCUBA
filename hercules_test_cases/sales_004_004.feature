@@ -11,20 +11,12 @@ Feature: SCUBA benchmark case sales_004_004 - Convert a lead
     And I search for "David Lee" in the "Search this list..." search field
     And I click the "David Lee" link in the Leads list
     And I wait until the Lead record page for "David Lee" opens
-    START IF the "Convert" button is visible on the Lead record page
-      When I click the "Convert" button on the Lead record page
-    ELSE
-      When I open the "Show more actions" menu on the Lead record page
-      And I click "Convert" in that menu
-    END IF
+    And If the "Convert" button is visible on the Lead record page, click it; else open the "Show more actions" menu on the Lead record page
+    And If the "Show more actions" menu is open, click "Convert" in that menu
     And I wait until the "Convert Lead" modal is ready
-    START IF the "Account" section of the "Convert Lead" modal lists an existing Account whose name matches the lead's Company
-      When I select the option "Choose Existing" in the "Account" section
-      And I select the existing Account whose name matches the lead's Company in the "Account" section
-    ELSE
-      When I select the option "Create New" in the "Account" section
-      And I ensure the "Account Name" text field in the "Account" section contains the lead's Company
-    END IF
+    And If the "Account" section of the "Convert Lead" modal lists an existing Account whose name matches the lead's Company, select the option "Choose Existing" in the "Account" section; else select the option "Create New" in the "Account" section
+    And If the option "Choose Existing" is selected in the "Account" section, select the existing Account whose name matches the lead's Company in the "Account" section
+    And If the option "Create New" is selected in the "Account" section, ensure the "Account Name" text field in the "Account" section contains the lead's Company
     And I select the option "Create New" in the "Opportunity" section
     And I replace the value in the "Opportunity Name" text field in the "Opportunity" section with "Lee Services Opportunity"
     And I ensure the "Don't create an opportunity upon conversion" checkbox is unchecked

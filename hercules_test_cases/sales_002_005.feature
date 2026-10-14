@@ -31,12 +31,8 @@ Feature: SCUBA benchmark case sales_002_005 - Create an account hierarchy
     And I search for "MegaCorp Financial - Parent" in the "Search this list..." search field
     And I click the "MegaCorp Financial - Parent" link in the Accounts list
     And I wait until the Account record page for "MegaCorp Financial - Parent" opens
-    START IF the "View Account Hierarchy" button is visible on the Account record page
-      When I click the "View Account Hierarchy" button on the Account record page
-    ELSE
-      When I open the "Show more actions" menu on the Account record page
-      And I click "View Account Hierarchy" in that menu
-    END IF
+    And If the "View Account Hierarchy" button is visible on the Account record page, click it; else open the "Show more actions" menu on the Account record page
+    And If the "Show more actions" menu is open, click "View Account Hierarchy" in that menu
     And I wait until the "Account Hierarchy" page is ready
     Then the "Account Hierarchy" should show "DataSecure Solutions - Cybersecurity Division" directly under "MegaCorp Financial - Parent"
     And the "Account Hierarchy" should show "GreenTech Innovations - Renewable Energy Division" directly under "MegaCorp Financial - Parent"

@@ -55,9 +55,13 @@ Every file must:
   `Given I am signed in to the Salesforce Lightning app`, performs the task with
   `When`/`And` steps and ends with `Then` assertions;
 - use only `Feature`, `Scenario`, `Given`, `When`, `Then`, `And`, `But`, `#`
-  comments and the TestZeus `START IF` / `ELSE` / `END IF` and one-line `If …`
-  conditionals — no `Background`, `Scenario Outline`, `Examples`, `Rule`, doc
-  strings or inline tags;
+  comments and one-line `If <observable condition>, <one action>; else <one
+  action>` conditionals — no `Background`, `Scenario Outline`, `Examples`,
+  `Rule`, doc strings or inline tags;
+- not use block control flow (`START IF` / `ELSE` / `END IF`, `START LOOP`):
+  the runner currently compiles block control flow through a scripted-workflow
+  path that cannot execute UI actions. Split a multi-action branch into
+  consecutive one-line `If` steps instead;
 - not add an end-of-test marker: the runner adds it.
 
 ## Rules for writing a case
@@ -79,8 +83,8 @@ Every file must:
   An undeclared value that is not stated in the request is rejected when the
   cases are packaged.
 - Keep conditional choices that the request itself states (for example "if the
-  company already exists as an Account, use it; otherwise create one") as a
-  `START IF` / `ELSE` / `END IF` block with an observable condition.
+  company already exists as an Account, use it; otherwise create one") as
+  one-line `If` steps with an observable condition, one action per branch.
 - Do not include organization URLs, usernames, record IDs or credentials. The
   sign-in step is supplied by the runner.
 

@@ -16,7 +16,7 @@ Feature: SCUBA benchmark case sales_005_002 - Log an activity and update the opp
     And I open the "Activity" tab on the Opportunity record page
     And I click the "Email" button in the "Activity" tab
     And I wait until the "Email" panel is ready
-    If the "To" field in the "Email" panel shows no recipient, search for and select the signed-in user in the "To" field
+    And If the "To" field in the "Email" panel shows no recipient, search for and select the signed-in user in the "To" field
     And I fill "Follow-up: Confirm the proposal details" in the "Subject" text field in the "Email" panel
     And I fill "Following up to confirm the proposal details." in the email body rich-text editor in the "Email" panel
     And I click the "Send" button in the "Email" panel
