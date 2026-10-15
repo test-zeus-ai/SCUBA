@@ -1,6 +1,7 @@
 Feature: SCUBA benchmark case sales_004_004 - Convert a lead
 
   # Original request: For David Lee — complete the lead conversion (status should be 'Closed - Converted'). Account handling: if the lead’s company matches an existing Account, use it; if not, spin up a new Account using the company name from the lead. Then open an Opportunity named Lee Services Opportunity.
+  # Account choice: the Convert Lead modal pre-selects "Choose Existing Account" with the matching Account when the lead's company already exists, and otherwise "Create New Account" named after the lead's company, so the case keeps the modal's proposal.
 
   Scenario: Sales user converts the lead David Lee and creates the opportunity Lee Services Opportunity
     Given I am signed in to the Salesforce Lightning app
@@ -13,10 +14,7 @@ Feature: SCUBA benchmark case sales_004_004 - Convert a lead
     And I click the "Show more actions" button on the Lead record page
     And I click "Convert" in the "Show more actions" menu
     And I wait until the "Convert Lead" modal is ready
-    And If the "Account" section of the "Convert Lead" modal shows "0 Account Matches", select the option "Create New" in the "Account" section; else select the option "Choose Existing" in the "Account" section
-    And If the option "Choose Existing" is selected in the "Account" section, select the Account listed under "Account Matches" whose name matches the lead's Company
-    And If the option "Create New" is selected in the "Account" section, ensure the "Account Name" text field in the "Account" section contains the lead's Company
-    And I select the option "Create New" in the "Opportunity" section
+    And I select the "Create New Opportunity" option in the "Opportunity" section
     And I replace the value in the "Opportunity Name" text field in the "Opportunity" section with "Lee Services Opportunity"
     And I ensure the "Don't create an opportunity upon conversion" checkbox is unchecked
     And I select "Closed - Converted" from the "Converted Status" picklist in the "Convert Lead" modal

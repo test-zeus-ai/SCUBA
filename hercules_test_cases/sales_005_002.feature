@@ -3,6 +3,7 @@ Feature: SCUBA benchmark case sales_005_002 - Log an activity and update the opp
   # Original request: For Enterprise Software Sale, could you send a quick follow-up email to Confirm the proposal details, and afterward set the opportunity stage to Perception Analysis?
   # Interpretation: Email Subject "Follow-up: Confirm the proposal details" <- "send a quick follow-up email to Confirm the proposal details"
   # Interpretation: Recipient: the signed-in user only when no recipient is suggested
+  # Interpretation: the Subject carries the follow-up request; the email body is left empty
 
   Scenario: Sales user logs the activity on Enterprise Software Sale and moves it to Perception Analysis
     Given I am signed in to the Salesforce Lightning app
@@ -17,7 +18,6 @@ Feature: SCUBA benchmark case sales_005_002 - Log an activity and update the opp
     And I wait until the "Email" panel is ready
     And If the "To" field in the "Email" panel shows no recipient, search for and select the signed-in user in the "To" field
     And I fill "Follow-up: Confirm the proposal details" in the "Subject" text field in the "Email" panel
-    And I fill "Following up to confirm the proposal details." in the email body rich-text editor in the "Email" panel
     And I click the "Send" button in the "Email" panel
     And I wait until the "Email" panel closes
     And I open the "Details" tab on the Opportunity record page
