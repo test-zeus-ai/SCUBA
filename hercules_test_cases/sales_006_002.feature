@@ -4,11 +4,11 @@ Feature: SCUBA benchmark case sales_006_002 - Create a product family and its pr
 
   Scenario: Sales operations creates the Smart Home Lighting Solutions product family and its products
     Given I am signed in to the Salesforce Lightning app
-    When I click "Setup" in the "Setup" menu in the global header
-    And I wait until the "Setup" page is ready in the new browser tab
-    And I click the "Object Manager" tab in Setup
-    And I search for "Product" in the "Quick Find" search field in Object Manager
-    And I click the "Product" link in the Object Manager list
+    When I click the "App Launcher" button
+    And I click the "Products" item in the App Launcher
+    And I wait until the "Recently Viewed" list view for Products is ready
+    And I click "Edit Object" in the "Setup" menu in the global header
+    And I wait until the "Product" object page in Setup is ready in the new browser tab
     And I click the "Fields & Relationships" link in the Product object sidebar
     And I click the "Product Family" link in the "Fields & Relationships" list
     And I click the "New" button in the "Values" section
