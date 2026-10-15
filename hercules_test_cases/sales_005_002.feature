@@ -22,7 +22,7 @@ Feature: SCUBA benchmark case sales_005_002 - Log an activity and update the opp
     And I wait until the "Email" panel closes
     And I open the "Details" tab on the Opportunity record page
     And I click the "Edit Stage" button in the "Details" tab
-    And I select "Perception Analysis" from the "Stage" picklist
+    And I select "Perception Analysis" from the "Stage" picklist in the "Details" tab
     And I click the "Save" button in the "Details" tab
     And I wait until the "Stage" field in the "Details" tab is no longer editable
     Then the "Stage" field in the "Details" tab should show "Perception Analysis"

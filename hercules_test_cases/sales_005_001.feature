@@ -19,7 +19,7 @@ Feature: SCUBA benchmark case sales_005_001 - Log an activity and update the opp
     And I wait until the "New Event" panel closes
     And I open the "Details" tab on the Opportunity record page
     And I click the "Edit Stage" button in the "Details" tab
-    And I select "Value Proposition" from the "Stage" picklist
+    And I select "Value Proposition" from the "Stage" picklist in the "Details" tab
     And I click the "Save" button in the "Details" tab
     And I wait until the "Stage" field in the "Details" tab is no longer editable
     Then the "Stage" field in the "Details" tab should show "Value Proposition"
