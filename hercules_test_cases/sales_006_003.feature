@@ -4,10 +4,8 @@ Feature: SCUBA benchmark case sales_006_003 - Create a product family and its pr
 
   Scenario: Sales operations creates the Electric Bike product family and its products
     Given I am signed in to the Salesforce Lightning app
-    When I click the "Setup" button in the global header
-    And I click "Setup" in the "Setup" menu
-    And I wait until a "Setup" browser tab opens
-    And I switch to the "Setup" browser tab
+    When I click "Setup" in the "Setup" menu in the global header
+    And I wait until the "Setup" page is ready in the new browser tab
     And I click the "Object Manager" tab in Setup
     And I search for "Product" in the "Quick Find" search field in Object Manager
     And I click the "Product" link in the Object Manager list
