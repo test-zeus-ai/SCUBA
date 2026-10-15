@@ -13,8 +13,8 @@ Feature: SCUBA benchmark case sales_004_004 - Convert a lead
     And I click the "Show more actions" button on the Lead record page
     And I click "Convert" in the "Show more actions" menu
     And I wait until the "Convert Lead" modal is ready
-    And If the "Account" section of the "Convert Lead" modal lists an existing Account whose name matches the lead's Company, select the option "Choose Existing" in the "Account" section; else select the option "Create New" in the "Account" section
-    And If the option "Choose Existing" is selected in the "Account" section, select the existing Account whose name matches the lead's Company in the "Account" section
+    And If the "Account" section of the "Convert Lead" modal shows "0 Account Matches", select the option "Create New" in the "Account" section; else select the option "Choose Existing" in the "Account" section
+    And If the option "Choose Existing" is selected in the "Account" section, select the Account listed under "Account Matches" whose name matches the lead's Company
     And If the option "Create New" is selected in the "Account" section, ensure the "Account Name" text field in the "Account" section contains the lead's Company
     And I select the option "Create New" in the "Opportunity" section
     And I replace the value in the "Opportunity Name" text field in the "Opportunity" section with "Lee Services Opportunity"
