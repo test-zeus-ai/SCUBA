@@ -13,7 +13,7 @@ Feature: SCUBA benchmark case sales_006_002 - Create a product family and its pr
     And I click the "Product Family" link in the "Fields & Relationships" list
     And I click the "New" button in the "Values" section
     And I wait until the "Add Picklist Values" page is ready
-    And I fill "Smart Home Lighting Solutions" in the picklist values textarea
+    And I fill "Smart Home Lighting Solutions" in the "Product Family" textarea on the "Add Picklist Values" page
     And I click the "Save" button on the "Add Picklist Values" page
     And I wait until the "Values" section lists "Smart Home Lighting Solutions"
     And I click the "App Launcher" button
