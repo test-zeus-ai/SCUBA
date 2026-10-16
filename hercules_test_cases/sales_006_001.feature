@@ -8,7 +8,7 @@ Feature: SCUBA benchmark case sales_006_001 - Create a product family and its pr
     And I click the "Products" item in the App Launcher
     And I wait until the "Recently Viewed" list view for Products is ready
     And I click "Edit Object" in the "Setup" menu in the global header
-    And I wait until the "Product" object page in Setup is ready in the new browser tab
+    And I wait until the "Product" object page in Setup is ready
     And I click the "Fields & Relationships" link in the Product object sidebar
     And I click the "Product Family" link in the "Fields & Relationships" list
     And I click the "New" button in the "Values" section
@@ -16,7 +16,6 @@ Feature: SCUBA benchmark case sales_006_001 - Create a product family and its pr
     And I fill "Running Shoes" in the picklist values textarea
     And I click the "Save" button on the "Add Picklist Values" page
     And I wait until the "Values" section lists "Running Shoes"
-    And I switch to the Salesforce Lightning app browser tab
     And I click the "App Launcher" button
     And I click the "Products" item in the App Launcher
     And I click the "New" button on the Products list
