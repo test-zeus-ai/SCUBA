@@ -16,7 +16,7 @@ Feature: SCUBA benchmark case sales_005_002 - Log an activity and update the opp
     And I open the "Activity" tab on the Opportunity record page
     And I click the "Email" button in the "Activity" tab
     And I wait until the "Email" panel is ready
-    And I search for the user shown as "Opportunity Owner" on the Opportunity record page in the "To" field in the "Email" panel and select that user
+    And I type the name of the opportunity owner shown on the record page into the "To" field in the "Email" panel and select that user from the suggestions
     And I fill "Follow-up: Confirm the proposal details" in the "Subject" text field in the "Email" panel
     And I click the "Send" button in the "Email" panel
     And I wait until the "Email" panel closes
