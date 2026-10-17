@@ -43,7 +43,9 @@ Feature: SCUBA benchmark case sales_006_002 - Create a product family and its pr
     And I wait until the Product record page opens
     And I click the "App Launcher" button
     And I click the "Products" item in the App Launcher
-    And I select "All Products" from the "Select a List View" picklist
+    And I wait until the "Recently Viewed" list view for Products is ready
+    And I click the "Select a List View: Products" button
+    And I click the "All Products" option in the list view menu
     And I wait until the "All Products" list view is ready
     Then the "All Products" list should show the product "BrightEase" with Product Family "Smart Home Lighting Solutions" and Product Code "BrightEase"
     And the "All Products" list should show the product "GlowSync" with Product Family "Smart Home Lighting Solutions" and Product Code "BrightEase"
