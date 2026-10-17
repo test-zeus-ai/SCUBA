@@ -13,10 +13,11 @@ Feature: SCUBA benchmark case sales_005_002 - Log an activity and update the opp
     And I search for "Enterprise Software Sale" in the "Search this list..." search field and press Enter
     And I click the "Enterprise Software Sale" link in the Opportunities list
     And I wait until the Opportunity record page for "Enterprise Software Sale" opens
+    And I save the "Opportunity Owner" name from the current page to <temp_owner>
     And I open the "Activity" tab on the Opportunity record page
     And I click the "Email" button in the "Activity" tab
     And I wait until the "Email" panel is ready
-    And I type the name of the opportunity owner shown on the record page into the "To" field in the "Email" panel and select that user from the suggestions
+    And I type "<temp_owner>" into the "To" field in the "Email" panel and select that user from the suggestions
     And I fill "Follow-up: Confirm the proposal details" in the "Subject" text field in the "Email" panel
     And I click the "Send" button in the "Email" panel
     And I wait until the "Email" panel closes
