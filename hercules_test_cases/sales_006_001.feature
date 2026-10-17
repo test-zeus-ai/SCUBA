@@ -40,5 +40,7 @@ Feature: SCUBA benchmark case sales_006_001 - Create a product family and its pr
     And I click the "Select a List View: Products" button
     And I click the "All Products" option in the list view menu
     And I wait until the "All Products" list view is ready
+    And I search for "ChillRun" in the "Search this list..." search field and press Enter
     Then the "All Products" list should show the product "ChillRun" with Product Family "Running Shoes" and Product Code "CHILL-001"
+    And I search for "MonsterRun" in the "Search this list..." search field and press Enter
     And the "All Products" list should show the product "MonsterRun" with Product Family "Running Shoes" and Product Code "MONS-001"

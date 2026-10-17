@@ -47,6 +47,9 @@ Feature: SCUBA benchmark case sales_006_002 - Create a product family and its pr
     And I click the "Select a List View: Products" button
     And I click the "All Products" option in the list view menu
     And I wait until the "All Products" list view is ready
+    And I search for "BrightEase" in the "Search this list..." search field and press Enter
     Then the "All Products" list should show the product "BrightEase" with Product Family "Smart Home Lighting Solutions" and Product Code "BrightEase"
+    And I search for "GlowSync" in the "Search this list..." search field and press Enter
     And the "All Products" list should show the product "GlowSync" with Product Family "Smart Home Lighting Solutions" and Product Code "BrightEase"
+    And I search for "LuxEdge" in the "Search this list..." search field and press Enter
     And the "All Products" list should show the product "LuxEdge" with Product Family "Smart Home Lighting Solutions" and Product Code "LuxEdge"

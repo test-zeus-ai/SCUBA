@@ -33,4 +33,5 @@ Feature: SCUBA benchmark case sales_006_003 - Create a product family and its pr
     And I click the "Select a List View: Products" button
     And I click the "All Products" option in the list view menu
     And I wait until the "All Products" list view is ready
+    And I search for "CityCruze" in the "Search this list..." search field and press Enter
     Then the "All Products" list should show the product "CityCruze" with Product Family "Electric Bike" and Product Code "CityCruze"

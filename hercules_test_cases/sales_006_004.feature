@@ -44,6 +44,9 @@ Feature: SCUBA benchmark case sales_006_004 - Create a product family and its pr
     And I click the "Select a List View: Products" button
     And I click the "All Products" option in the list view menu
     And I wait until the "All Products" list view is ready
+    And I search for "SmartLock Pro" in the "Search this list..." search field and press Enter
     Then the "All Products" list should show the product "SmartLock Pro" with Product Family "Smart Home Security"
+    And I search for "WatchCam 360" in the "Search this list..." search field and press Enter
     And the "All Products" list should show the product "WatchCam 360" with Product Family "Smart Home Security"
+    And I search for "AlertSense" in the "Search this list..." search field and press Enter
     And the "All Products" list should show the product "AlertSense" with Product Family "Smart Home Security"
