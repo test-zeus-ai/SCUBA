@@ -14,7 +14,7 @@ Feature: SCUBA benchmark case sales_009_003 - Create a contract and an order fro
     And I wait until the "New Contract" modal is ready
     And I search for and select "Green Solutions" in the "Account Name" lookup in the "New Contract" modal
     And I fill "1 month from today" in the "Contract Start Date" date field in the "New Contract" modal
-    And I select "18" from the "Contract Term (months)" picklist in the "New Contract" modal
+    And I fill "18" in the "Contract Term (months)" field in the "New Contract" modal
     And I click the "Save" button in the "New Contract" modal
     And I wait until the Contract record page opens
     And I save the "Contract Number" value from the current page to <temp_contract_number>

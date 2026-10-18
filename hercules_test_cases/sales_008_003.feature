@@ -19,6 +19,8 @@ Feature: SCUBA benchmark case sales_008_003 - Create a quote with a discounted l
     And I wait until the Quote record page for "Fitness Promo" opens
     And I open the "Related" tab on the Quote record page
     And I click the "Add Products" button in the "Quote Line Items" related list
+    And I wait until the "Choose Price Book" dialog is ready
+    And I click the "Save" button in the "Choose Price Book" dialog
     And I wait until the "Add Products" dialog is ready
     And I check the "Select item Smart Fitness Tracker" checkbox in the "Add Products" dialog
     And I click the "Next" button in the "Add Products" dialog

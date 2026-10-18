@@ -15,13 +15,20 @@ Feature: SCUBA benchmark case sales_010_003 - Create a sales process
     And I fill "B2C" in the "Sales Process Name" text field on the "Sales Process Edit" page
     And I click the "Save" button on the "Sales Process Edit" page
     And I wait until the "Selected Values" list is ready on the "Sales Process Edit" page
-    And I move "Prospecting" from the "Selected Values" list to the "Available Values" list
-    And I move "Qualification" from the "Selected Values" list to the "Available Values" list
-    And I move "Value Proposition" from the "Selected Values" list to the "Available Values" list
-    And I move "Id. Decision Makers" from the "Selected Values" list to the "Available Values" list
-    And I move "Perception Analysis" from the "Selected Values" list to the "Available Values" list
-    And I move "Negotiation/Review" from the "Selected Values" list to the "Available Values" list
-    And I move "Closed Lost" from the "Selected Values" list to the "Available Values" list
+    And I select "Prospecting (Open, 10%, Pipeline)" from the "Selected Values" list on the "Sales Process Edit" page
+    And I click the "Remove" arrow between the "Available Values" and "Selected Values" lists
+    And I select "Qualification (Open, 10%, Pipeline)" from the "Selected Values" list on the "Sales Process Edit" page
+    And I click the "Remove" arrow between the "Available Values" and "Selected Values" lists
+    And I select "Value Proposition (Open, 50%, Pipeline)" from the "Selected Values" list on the "Sales Process Edit" page
+    And I click the "Remove" arrow between the "Available Values" and "Selected Values" lists
+    And I select "Id. Decision Makers (Open, 60%, Pipeline)" from the "Selected Values" list on the "Sales Process Edit" page
+    And I click the "Remove" arrow between the "Available Values" and "Selected Values" lists
+    And I select "Perception Analysis (Open, 70%, Pipeline)" from the "Selected Values" list on the "Sales Process Edit" page
+    And I click the "Remove" arrow between the "Available Values" and "Selected Values" lists
+    And I select "Negotiation/Review (Open, 90%, Pipeline)" from the "Selected Values" list on the "Sales Process Edit" page
+    And I click the "Remove" arrow between the "Available Values" and "Selected Values" lists
+    And I select "Closed Lost (Closed/Lost, 0%, Omitted)" from the "Selected Values" list on the "Sales Process Edit" page
+    And I click the "Remove" arrow between the "Available Values" and "Selected Values" lists
     And I click the "Save" button on the "Sales Process Edit" page
     And I wait until the "B2C" sales process detail page is ready
     Then the "B2C" sales process should include only the stages "Needs Analysis", "Proposal/Price Quote", "Closed Won"
