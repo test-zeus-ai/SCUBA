@@ -24,7 +24,7 @@ Feature: SCUBA benchmark case sales_006_003 - Create a product family and its pr
     And I fill "CityCruze" in the "Product Code" text field
     And I select "Electric Bike" from the "Product Family" picklist
     And I fill "designed for daily commuters, offering pedal assist, lightweight frame, and a 40-mile battery range" in the "Product Description" textarea
-    And I ensure the "Active" checkbox is checked
+    And I check the "Active" checkbox in the "New Product" modal
     And I click the "Save" button in the "New Product" modal
     And I wait until the Product record page opens
     And I click the "App Launcher" button

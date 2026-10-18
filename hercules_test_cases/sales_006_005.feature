@@ -24,25 +24,25 @@ Feature: SCUBA benchmark case sales_006_005 - Create a product family and its pr
     And I fill "BrewMaster Elite" in the "Product Name" text field
     And I select "Professional Coffee Equipment" from the "Product Family" picklist
     And I fill "commercial espresso brewing" in the "Product Description" textarea
-    And I ensure the "Active" checkbox is checked
+    And I check the "Active" checkbox in the "New Product" modal
     And I click the "Save & New" button in the "New Product" modal
     And I wait until a new "New Product" modal is ready
     And I fill "GrindTech Pro" in the "Product Name" text field
     And I select "Professional Coffee Equipment" from the "Product Family" picklist
     And I fill "precision bean grinding" in the "Product Description" textarea
-    And I ensure the "Active" checkbox is checked
+    And I check the "Active" checkbox in the "New Product" modal
     And I click the "Save & New" button in the "New Product" modal
     And I wait until a new "New Product" modal is ready
     And I fill "SteamForce" in the "Product Name" text field
     And I select "Professional Coffee Equipment" from the "Product Family" picklist
     And I fill "milk frothing" in the "Product Description" textarea
-    And I ensure the "Active" checkbox is checked
+    And I check the "Active" checkbox in the "New Product" modal
     And I click the "Save & New" button in the "New Product" modal
     And I wait until a new "New Product" modal is ready
     And I fill "CleanCycle" in the "Product Name" text field
     And I select "Professional Coffee Equipment" from the "Product Family" picklist
     And I fill "automated cleaning systems" in the "Product Description" textarea
-    And I ensure the "Active" checkbox is checked
+    And I check the "Active" checkbox in the "New Product" modal
     And I click the "Save" button in the "New Product" modal
     And I wait until the Product record page opens
     And I click the "App Launcher" button

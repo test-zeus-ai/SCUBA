@@ -24,21 +24,21 @@ Feature: SCUBA benchmark case sales_006_002 - Create a product family and its pr
     And I fill "BrightEase" in the "Product Code" text field
     And I select "Smart Home Lighting Solutions" from the "Product Family" picklist
     And I fill "budget-friendly smart bulb for everyday use" in the "Product Description" textarea
-    And I ensure the "Active" checkbox is checked
+    And I check the "Active" checkbox in the "New Product" modal
     And I click the "Save & New" button in the "New Product" modal
     And I wait until a new "New Product" modal is ready
     And I fill "GlowSync" in the "Product Name" text field
     And I fill "BrightEase" in the "Product Code" text field
     And I select "Smart Home Lighting Solutions" from the "Product Family" picklist
     And I fill "features customizable color schemes and app control" in the "Product Description" textarea
-    And I ensure the "Active" checkbox is checked
+    And I check the "Active" checkbox in the "New Product" modal
     And I click the "Save & New" button in the "New Product" modal
     And I wait until a new "New Product" modal is ready
     And I fill "LuxEdge" in the "Product Name" text field
     And I fill "LuxEdge" in the "Product Code" text field
     And I select "Smart Home Lighting Solutions" from the "Product Family" picklist
     And I fill "designed for premium interiors with motion sensing and voice assistant integration" in the "Product Description" textarea
-    And I ensure the "Active" checkbox is checked
+    And I check the "Active" checkbox in the "New Product" modal
     And I click the "Save" button in the "New Product" modal
     And I wait until the Product record page opens
     And I click the "App Launcher" button

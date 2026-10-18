@@ -17,7 +17,8 @@ Feature: SCUBA benchmark case sales_009_004 - Create a contract and an order fro
     And I fill "12" in the "Contract Term (months)" field in the "New Contract" modal
     And I click the "Save" button in the "New Contract" modal
     And I wait until the Contract record page opens
-    And I save the "Contract Number" value from the current page to <temp_contract_number>
+    And I open the "Details" tab on the Contract record page
+    And I save the value of the "Contract Number" field on the Contract record page to <temp_contract_number>
     And I click the "App Launcher" button
     And I click the "Orders" item in the App Launcher
     And I wait until the "Recently Viewed" list view for Orders is ready

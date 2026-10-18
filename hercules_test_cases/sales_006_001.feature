@@ -24,14 +24,14 @@ Feature: SCUBA benchmark case sales_006_001 - Create a product family and its pr
     And I fill "CHILL-001" in the "Product Code" text field
     And I select "Running Shoes" from the "Product Family" picklist
     And I fill "best fit for lightweight exercise" in the "Product Description" textarea
-    And I ensure the "Active" checkbox is checked
+    And I check the "Active" checkbox in the "New Product" modal
     And I click the "Save & New" button in the "New Product" modal
     And I wait until a new "New Product" modal is ready
     And I fill "MonsterRun" in the "Product Name" text field
     And I fill "MONS-001" in the "Product Code" text field
     And I select "Running Shoes" from the "Product Family" picklist
     And I fill "designed for Marathon fans" in the "Product Description" textarea
-    And I ensure the "Active" checkbox is checked
+    And I check the "Active" checkbox in the "New Product" modal
     And I click the "Save" button in the "New Product" modal
     And I wait until the Product record page opens
     And I click the "App Launcher" button

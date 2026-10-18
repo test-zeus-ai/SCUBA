@@ -10,7 +10,7 @@ Feature: SCUBA benchmark case sales_007_003 - Create price books for a product
     And I click the "New" button on the Price Books list
     And I wait until the "New Price Book" modal is ready
     And I fill "Fitness Promo" in the "Price Book Name" text field
-    And I ensure the "Active" checkbox is checked
+    And I check the "Active" checkbox in the "New Price Book" modal
     And I click the "Save" button in the "New Price Book" modal
     And I wait until the Price Book record page for "Fitness Promo" opens
     And I open the "Related" tab on the Price Book record page
@@ -28,7 +28,7 @@ Feature: SCUBA benchmark case sales_007_003 - Create price books for a product
     And I click the "New" button on the Price Books list
     And I wait until the "New Price Book" modal is ready
     And I fill "Wellness Special" in the "Price Book Name" text field
-    And I ensure the "Active" checkbox is checked
+    And I check the "Active" checkbox in the "New Price Book" modal
     And I click the "Save" button in the "New Price Book" modal
     And I wait until the Price Book record page for "Wellness Special" opens
     And I open the "Related" tab on the Price Book record page

@@ -20,6 +20,7 @@ Feature: SCUBA benchmark case sales_008_001 - Create a quote with a discounted l
     And I open the "Related" tab on the Quote record page
     And I click the "Add Products" button in the "Quote Line Items" related list
     And I wait until the "Choose Price Book" dialog is ready
+    And I search for and select "Standard Price Book" in the "Price Book" lookup in the "Choose Price Book" dialog
     And I click the "Save" button in the "Choose Price Book" dialog
     And I wait until the "Add Products" dialog is ready
     And I check the "Select item ThermalMax Pro" checkbox in the "Add Products" dialog

@@ -23,19 +23,19 @@ Feature: SCUBA benchmark case sales_006_004 - Create a product family and its pr
     And I fill "SmartLock Pro" in the "Product Name" text field
     And I select "Smart Home Security" from the "Product Family" picklist
     And I fill "advanced door security" in the "Product Description" textarea
-    And I ensure the "Active" checkbox is checked
+    And I check the "Active" checkbox in the "New Product" modal
     And I click the "Save & New" button in the "New Product" modal
     And I wait until a new "New Product" modal is ready
     And I fill "WatchCam 360" in the "Product Name" text field
     And I select "Smart Home Security" from the "Product Family" picklist
     And I fill "comprehensive surveillance" in the "Product Description" textarea
-    And I ensure the "Active" checkbox is checked
+    And I check the "Active" checkbox in the "New Product" modal
     And I click the "Save & New" button in the "New Product" modal
     And I wait until a new "New Product" modal is ready
     And I fill "AlertSense" in the "Product Name" text field
     And I select "Smart Home Security" from the "Product Family" picklist
     And I fill "motion detection and alerts" in the "Product Description" textarea
-    And I ensure the "Active" checkbox is checked
+    And I check the "Active" checkbox in the "New Product" modal
     And I click the "Save" button in the "New Product" modal
     And I wait until the Product record page opens
     And I click the "App Launcher" button
