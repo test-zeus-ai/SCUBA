@@ -8,25 +8,19 @@ Feature: SCUBA benchmark case sales_008_004 - Create a quote with a discounted l
   Scenario: Sales user creates the Silver Members quote on the Digital Marketing opportunity
     Given I am signed in to the Salesforce Lightning app
     When I click the "App Launcher" button
-    And I click the "Opportunities" item in the App Launcher
-    And I wait until the "Recently Viewed" list view for Opportunities is ready
-    And I search for "Digital Marketing" in the "Search this list..." search field and press Enter
-    And I click the "Digital Marketing" link in the Opportunities list
-    And I wait until the Opportunity record page for "Digital Marketing" opens
-    And I open the "Related" tab on the Opportunity record page
-    And I click the "New Quote" button in the "Quotes" related list
+    And I click the "Quotes" item in the App Launcher
+    And I wait until the "Recently Viewed" list view for Quotes is ready
+    And I click the "New Quote" button on the Quotes list
     And I wait until the "New Quote" modal is ready
     And I fill "Silver Members" in the "Quote Name" text field in the "New Quote" modal
+    And I search for and select "Digital Marketing" in the "Opportunity Name" lookup in the "New Quote" modal
     And I fill "2 weeks from today" in the "Expiration Date" date field in the "New Quote" modal
     And I click the "Save" button in the "New Quote" modal
-    And I wait until the "Quotes" related list lists "Silver Members"
-    And I click the "Silver Members" link in the "Quotes" related list
     And I wait until the Quote record page for "Silver Members" opens
     And I open the "Related" tab on the Quote record page
     And I click the "Add Products" button in the "Quote Line Items" related list
     And I wait until the "Add Products" dialog is ready
-    And I search for "Organic Skincare Set" in the "Search Products..." search field and press Enter
-    And I check the checkbox in the "Organic Skincare Set" row of the "Add Products" dialog
+    And I check the "Select item Organic Skincare Set" checkbox in the "Add Products" dialog
     And I click the "Next" button in the "Add Products" dialog
     And I wait until the "Edit Selected Quote Line Items" dialog is ready
     And I fill "20" in the "Quantity" field in the "Organic Skincare Set" row of the "Edit Selected Quote Line Items" dialog

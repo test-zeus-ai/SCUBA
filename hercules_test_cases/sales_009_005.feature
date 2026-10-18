@@ -14,14 +14,19 @@ Feature: SCUBA benchmark case sales_009_005 - Create a contract and an order fro
     And I wait until the "New Contract" modal is ready
     And I search for and select "Black Enterprises" in the "Account Name" lookup in the "New Contract" modal
     And I fill "4 weeks from today" in the "Contract Start Date" date field in the "New Contract" modal
-    And I fill "6" in the "Contract Term (months)" field in the "New Contract" modal
+    And I select "6" from the "Contract Term (months)" picklist in the "New Contract" modal
     And I click the "Save" button in the "New Contract" modal
     And I wait until the Contract record page opens
-    And I open the "Related" tab on the Contract record page
-    And I click the "New" button in the "Orders" related list
+    And I save the "Contract Number" value from the current page to <temp_contract_number>
+    And I click the "App Launcher" button
+    And I click the "Orders" item in the App Launcher
+    And I wait until the "Recently Viewed" list view for Orders is ready
+    And I click the "New Order" button on the Orders list
     And I wait until the "New Order" modal is ready
+    And I search for and select "Black Enterprises" in the "Account Name" lookup in the "New Order" modal
+    And I search for and select "<temp_contract_number>" in the "Contract Number" lookup in the "New Order" modal
     And I fill "6 weeks from today" in the "Order Start Date" date field in the "New Order" modal
     And I select "Draft" from the "Status" picklist in the "New Order" modal
     And I click the "Save" button in the "New Order" modal
     And I wait until the Order record page opens
-    Then the Order record page should show Account Name "Black Enterprises" and a Contract Number
+    Then the Order record page should show Account Name "Black Enterprises" and Contract Number "<temp_contract_number>"

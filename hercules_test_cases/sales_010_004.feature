@@ -11,7 +11,7 @@ Feature: SCUBA benchmark case sales_010_004 - Create a sales process
     And I wait until the "Sales Processes" page is ready
     And I click the "New" button on the "Sales Processes" page
     And I wait until the "Sales Process Edit" page is ready
-    And I select "Master" from the "Existing Sales Process" picklist on the "Sales Process Edit" page
+    And I select "--Master--" from the "Existing Sales Process" picklist on the "Sales Process Edit" page
     And I fill "Customer Journey Sales Process" in the "Sales Process Name" text field on the "Sales Process Edit" page
     And I click the "Save" button on the "Sales Process Edit" page
     And I wait until the "Selected Values" list is ready on the "Sales Process Edit" page

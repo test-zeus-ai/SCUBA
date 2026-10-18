@@ -18,8 +18,7 @@ Feature: SCUBA benchmark case sales_007_005 - Create price books for a product
     And I open the "Related" tab on the Price Book record page
     And I click the "Add Products" button in the "Price Book Entries" related list
     And I wait until the "Add Products" dialog is ready
-    And I search for "Titanium Pro Laptop" in the "Search Products..." search field and press Enter
-    And I check the checkbox in the "Titanium Pro Laptop" row of the "Add Products" dialog
+    And I check the "Select item Titanium Pro Laptop" checkbox in the "Add Products" dialog
     And I click the "Next" button in the "Add Products" dialog
     And I wait until the "Edit Selected Price Book Entries" dialog is ready
     And I fill "2000" in the "List Price" field in the "Titanium Pro Laptop" row of the "Edit Selected Price Book Entries" dialog
@@ -37,8 +36,7 @@ Feature: SCUBA benchmark case sales_007_005 - Create price books for a product
     And I open the "Related" tab on the Price Book record page
     And I click the "Add Products" button in the "Price Book Entries" related list
     And I wait until the "Add Products" dialog is ready
-    And I search for "Titanium Pro Laptop" in the "Search Products..." search field and press Enter
-    And I check the checkbox in the "Titanium Pro Laptop" row of the "Add Products" dialog
+    And I check the "Select item Titanium Pro Laptop" checkbox in the "Add Products" dialog
     And I click the "Next" button in the "Add Products" dialog
     And I wait until the "Edit Selected Price Book Entries" dialog is ready
     And I fill "3000" in the "List Price" field in the "Titanium Pro Laptop" row of the "Edit Selected Price Book Entries" dialog
