@@ -8,11 +8,10 @@ Feature: SCUBA benchmark case sales_011_003 - Create a territory model with an a
     Given I am signed in to the Salesforce Lightning app
     When I click "Setup" in the "Setup" menu in the global header
     And I wait until the "Setup Home" page is ready
-    And I search for "Territory Settings" in the "Quick Find" search field
+    And I search for "Territory" in the "Quick Find" search field
     And I click the "Territory Settings" link in the Setup sidebar
     And I wait until the "Territory Settings" page is ready
     And I wait until the "Territory Settings" page shows the "Disable Sales Territory" button, which means sales territory is enabled
-    And I search for "Territory Models" in the "Quick Find" search field
     And I click the "Territory Models" link in the Setup sidebar
     And I wait until the "Territory Models" page is ready
     And I click the "New" button on the "Territory Models" page
