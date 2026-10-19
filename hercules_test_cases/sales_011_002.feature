@@ -20,17 +20,17 @@ Feature: SCUBA benchmark case sales_011_002 - Create a territory model with an a
     And I fill "by Employees" in the "Label" text field on the "New Territory Model" page
     And I click the "Save" button on the "New Territory Model" page
     And I wait until the "by Employees" territory model page is ready
-    And I click the "View Rules" link on the territory model page
-    And I wait until the "Assignment Rules" page is ready
-    And I click the "New" button on the "Assignment Rules" page
-    And I wait until the "Assignment Rule Edit" page is ready
-    And I fill "Number of Employees and Year" in the "Rule Name" text field on the "Assignment Rule Edit" page
-    And I select "Employees" from the "Field" picklist in row 1 of the "Rule Criteria" section
-    And I select "less or equal" from the "Operator" picklist in row 1 of the "Rule Criteria" section
-    And I fill "50" in the "Value" field in row 1 of the "Rule Criteria" section
-    And I select "Year Started" from the "Field" picklist in row 2 of the "Rule Criteria" section
-    And I select "greater or equal" from the "Operator" picklist in row 2 of the "Rule Criteria" section
-    And I fill "2020" in the "Value" field in row 2 of the "Rule Criteria" section
-    And I click the "Save" button on the "Assignment Rule Edit" page
+    And I click the "View Rules" button on the territory model detail page
+    And I wait until the "Object Territory Assignment Rules" page is ready
+    And I click the "New Rule" button on the "Object Territory Assignment Rules" page
+    And I wait until the assignment rule edit page shows the "Rule Name" field
+    And I fill "Number of Employees and Year" in the "Rule Name" text field on the assignment rule edit page
+    And I select "Account: Employees" from the "Field 1" picklist on the assignment rule edit page
+    And I select "less or equal" from the "Operator 1" picklist on the assignment rule edit page
+    And I fill "50" in the "Value 1" text field on the assignment rule edit page
+    And I select "Account: Year Started" from the "Field 2" picklist on the assignment rule edit page
+    And I select "greater or equal" from the "Operator 2" picklist on the assignment rule edit page
+    And I fill "2020" in the "Value 2" text field on the assignment rule edit page
+    And I click the "Save" button on the assignment rule edit page
     And I wait until the "Number of Employees and Year" assignment rule detail page is ready
     Then the "Number of Employees and Year" assignment rule should show the criteria "Employees" less or equal "50"; "Year Started" greater or equal "2020"

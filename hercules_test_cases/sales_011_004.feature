@@ -19,14 +19,14 @@ Feature: SCUBA benchmark case sales_011_004 - Create a territory model with an a
     And I fill "Global Sales Territory" in the "Label" text field on the "New Territory Model" page
     And I click the "Save" button on the "New Territory Model" page
     And I wait until the "Global Sales Territory" territory model page is ready
-    And I click the "View Rules" link on the territory model page
-    And I wait until the "Assignment Rules" page is ready
-    And I click the "New" button on the "Assignment Rules" page
-    And I wait until the "Assignment Rule Edit" page is ready
-    And I fill "Global Sales Territory" in the "Rule Name" text field on the "Assignment Rule Edit" page
-    And I select "Customer Priority" from the "Field" picklist in row 1 of the "Rule Criteria" section
-    And I select "equals" from the "Operator" picklist in row 1 of the "Rule Criteria" section
-    And I fill "High" in the "Value" field in row 1 of the "Rule Criteria" section
-    And I click the "Save" button on the "Assignment Rule Edit" page
+    And I click the "View Rules" button on the territory model detail page
+    And I wait until the "Object Territory Assignment Rules" page is ready
+    And I click the "New Rule" button on the "Object Territory Assignment Rules" page
+    And I wait until the assignment rule edit page shows the "Rule Name" field
+    And I fill "Global Sales Territory" in the "Rule Name" text field on the assignment rule edit page
+    And I select "Account: Customer Priority" from the "Field 1" picklist on the assignment rule edit page
+    And I select "equals" from the "Operator 1" picklist on the assignment rule edit page
+    And I fill "High" in the "Value 1" text field on the assignment rule edit page
+    And I click the "Save" button on the assignment rule edit page
     And I wait until the "Global Sales Territory" assignment rule detail page is ready
     Then the "Global Sales Territory" assignment rule should show the criteria "Customer Priority" equals "High"

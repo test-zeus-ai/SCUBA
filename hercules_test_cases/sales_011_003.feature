@@ -20,20 +20,20 @@ Feature: SCUBA benchmark case sales_011_003 - Create a territory model with an a
     And I fill "by Finance Industry" in the "Label" text field on the "New Territory Model" page
     And I click the "Save" button on the "New Territory Model" page
     And I wait until the "by Finance Industry" territory model page is ready
-    And I click the "View Rules" link on the territory model page
-    And I wait until the "Assignment Rules" page is ready
-    And I click the "New" button on the "Assignment Rules" page
-    And I wait until the "Assignment Rule Edit" page is ready
-    And I fill "Industry, Active and Type" in the "Rule Name" text field on the "Assignment Rule Edit" page
-    And I select "Industry" from the "Field" picklist in row 1 of the "Rule Criteria" section
-    And I select "equals" from the "Operator" picklist in row 1 of the "Rule Criteria" section
-    And I fill "Finance" in the "Value" field in row 1 of the "Rule Criteria" section
-    And I select "Active" from the "Field" picklist in row 2 of the "Rule Criteria" section
-    And I select "equals" from the "Operator" picklist in row 2 of the "Rule Criteria" section
-    And I fill "Yes" in the "Value" field in row 2 of the "Rule Criteria" section
-    And I select "Type" from the "Field" picklist in row 3 of the "Rule Criteria" section
-    And I select "not equal to" from the "Operator" picklist in row 3 of the "Rule Criteria" section
-    And I fill "Channel Partner / Reseller,Installation Partner" in the "Value" field in row 3 of the "Rule Criteria" section
-    And I click the "Save" button on the "Assignment Rule Edit" page
+    And I click the "View Rules" button on the territory model detail page
+    And I wait until the "Object Territory Assignment Rules" page is ready
+    And I click the "New Rule" button on the "Object Territory Assignment Rules" page
+    And I wait until the assignment rule edit page shows the "Rule Name" field
+    And I fill "Industry, Active and Type" in the "Rule Name" text field on the assignment rule edit page
+    And I select "Account: Industry" from the "Field 1" picklist on the assignment rule edit page
+    And I select "equals" from the "Operator 1" picklist on the assignment rule edit page
+    And I fill "Finance" in the "Value 1" text field on the assignment rule edit page
+    And I select "Account: Active" from the "Field 2" picklist on the assignment rule edit page
+    And I select "equals" from the "Operator 2" picklist on the assignment rule edit page
+    And I fill "Yes" in the "Value 2" text field on the assignment rule edit page
+    And I select "Account: Type" from the "Field 3" picklist on the assignment rule edit page
+    And I select "not equal to" from the "Operator 3" picklist on the assignment rule edit page
+    And I fill "Channel Partner / Reseller,Installation Partner" in the "Value 3" text field on the assignment rule edit page
+    And I click the "Save" button on the assignment rule edit page
     And I wait until the "Industry, Active and Type" assignment rule detail page is ready
     Then the "Industry, Active and Type" assignment rule should show the criteria "Industry" equals "Finance"; "Active" equals "Yes"; "Type" not equal to "Channel Partner / Reseller,Installation Partner"

@@ -19,14 +19,14 @@ Feature: SCUBA benchmark case sales_011_001 - Create a territory model with an a
     And I fill "by revenue" in the "Label" text field on the "New Territory Model" page
     And I click the "Save" button on the "New Territory Model" page
     And I wait until the "by revenue" territory model page is ready
-    And I click the "View Rules" link on the territory model page
-    And I wait until the "Assignment Rules" page is ready
-    And I click the "New" button on the "Assignment Rules" page
-    And I wait until the "Assignment Rule Edit" page is ready
-    And I fill "annual revenue is USD" in the "Rule Name" text field on the "Assignment Rule Edit" page
-    And I select "Annual Revenue" from the "Field" picklist in row 1 of the "Rule Criteria" section
-    And I select "greater than" from the "Operator" picklist in row 1 of the "Rule Criteria" section
-    And I fill "10000" in the "Value" field in row 1 of the "Rule Criteria" section
-    And I click the "Save" button on the "Assignment Rule Edit" page
+    And I click the "View Rules" button on the territory model detail page
+    And I wait until the "Object Territory Assignment Rules" page is ready
+    And I click the "New Rule" button on the "Object Territory Assignment Rules" page
+    And I wait until the assignment rule edit page shows the "Rule Name" field
+    And I fill "annual revenue is USD" in the "Rule Name" text field on the assignment rule edit page
+    And I select "Account: Annual Revenue" from the "Field 1" picklist on the assignment rule edit page
+    And I select "greater than" from the "Operator 1" picklist on the assignment rule edit page
+    And I fill "10000" in the "Value 1" text field on the assignment rule edit page
+    And I click the "Save" button on the assignment rule edit page
     And I wait until the "annual revenue is USD" assignment rule detail page is ready
     Then the "annual revenue is USD" assignment rule should show the criteria "Annual Revenue" greater than "10000"
