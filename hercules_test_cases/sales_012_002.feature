@@ -21,7 +21,6 @@ Feature: SCUBA benchmark case sales_012_002 - Create a campaign and invite leads
     And I open the "Related" tab on the Campaign record page
     And I click the "Add Leads" button in the "Campaign Members" related list
     And I wait until the "Add Leads to Campaign" dialog is ready
-    And I search for "Amanda Klein" in the "Search Leads" search field in the "Add Leads to Campaign" dialog
     And I check the "Select item Amanda Klein" checkbox in the "Add Leads to Campaign" dialog
     And I click the "Next" button in the "Add Leads to Campaign" dialog
     And I click the "Submit" button in the "Add Leads to Campaign" dialog

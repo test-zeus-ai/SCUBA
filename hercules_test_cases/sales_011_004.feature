@@ -8,9 +8,9 @@ Feature: SCUBA benchmark case sales_011_004 - Create a territory model with an a
     When I click "Setup" in the "Setup" menu in the global header
     And I wait until the "Setup Home" page is ready
     And I search for "Territory Settings" in the "Quick Find" search field
-    And I click the "Settings" link under "Territories" in the Setup sidebar
+    And I click the "Territory Settings" link in the Setup sidebar
     And I wait until the "Territory Settings" page is ready
-    And I make sure Territory Management is enabled on the "Territory Settings" page, clicking the "Enable Territory Management" button only if it is shown
+    And I wait until the "Territory Settings" page shows the "Disable Sales Territory" button, which means sales territory is enabled
     And I search for "Territory Models" in the "Quick Find" search field
     And I click the "Territory Models" link in the Setup sidebar
     And I wait until the "Territory Models" page is ready
