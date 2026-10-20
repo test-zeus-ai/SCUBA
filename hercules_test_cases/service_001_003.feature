@@ -1,6 +1,7 @@
 Feature: SCUBA benchmark case service_001_003 - Create the Marketing Support queue
 
   # Original request: Please create a queue titled "Marketing Support," and configure email alerts to be sent exclusively to the "marketing.support@business.com" distribution list. Link it to the Attribute Picklist object, and add the "User: Integration User" plus the role "Role: Marketing Team" as members.
+  # Interpretation: Queue Name "Marketing_Support" <- Salesforce API name for the queue label "Marketing Support" (spaces become underscores)
   # Interpretation: Queue Email "marketing.support@business.com" with "Send Email to Members" unchecked <- "configure email alerts to be sent exclusively to the"
 
   Scenario: Support administrator creates the Marketing Support queue
@@ -13,6 +14,7 @@ Feature: SCUBA benchmark case service_001_003 - Create the Marketing Support que
     And I click the "New" button on the "Queues" page
     And I wait until the queue edit page shows the "Label" field
     And I fill "Marketing Support" in the "Label" text field on the queue edit page
+    And I fill "Marketing_Support" in the "Queue Name" text field on the queue edit page
     And I fill "marketing.support@business.com" in the "Queue Email" text field on the queue edit page
     And I uncheck the "Send Email to Members" checkbox on the queue edit page
     And I move "Attribute Picklist" from the "Available Objects" list to the "Selected Objects" list on the queue edit page

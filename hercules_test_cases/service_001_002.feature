@@ -1,6 +1,7 @@
 Feature: SCUBA benchmark case service_001_002 - Create the VIP Support queue
 
   # Original request: Create a queue with name "VIP Support". Add the Object "Buyer Group". Include "Role: SVP, Customer Service & Support" and "Role: Customer Support, International" as the Members.
+  # Interpretation: Queue Name "VIP_Support" <- Salesforce API name for the queue label "VIP Support" (spaces become underscores)
 
   Scenario: Support administrator creates the VIP Support queue
     Given I am signed in to the Salesforce Lightning app
@@ -12,6 +13,7 @@ Feature: SCUBA benchmark case service_001_002 - Create the VIP Support queue
     And I click the "New" button on the "Queues" page
     And I wait until the queue edit page shows the "Label" field
     And I fill "VIP Support" in the "Label" text field on the queue edit page
+    And I fill "VIP_Support" in the "Queue Name" text field on the queue edit page
     And I move "Buyer Group" from the "Available Objects" list to the "Selected Objects" list on the queue edit page
     And I select "Roles" from the "Search" picklist in the "Queue Members" section
     And I fill "SVP, Customer Service & Support" in the "for:" text field in the "Queue Members" section

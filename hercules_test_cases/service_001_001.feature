@@ -1,6 +1,7 @@
 Feature: SCUBA benchmark case service_001_001 - Create the Shoe Case Support queue
 
   # Original request: Create a queue named "Shoe Case Support." Limit notification emails so they go only to the "support.shoe@papaltd.com" distribution list. Add the Customer object, and add the role "Customer Support, North America" as a member.
+  # Interpretation: Queue Name "Shoe_Case_Support" <- Salesforce API name for the queue label "Shoe Case Support" (spaces become underscores)
   # Interpretation: Queue Email "support.shoe@papaltd.com" with "Send Email to Members" unchecked <- "Limit notification emails so they go only to the"
 
   Scenario: Support administrator creates the Shoe Case Support queue
@@ -13,6 +14,7 @@ Feature: SCUBA benchmark case service_001_001 - Create the Shoe Case Support que
     And I click the "New" button on the "Queues" page
     And I wait until the queue edit page shows the "Label" field
     And I fill "Shoe Case Support" in the "Label" text field on the queue edit page
+    And I fill "Shoe_Case_Support" in the "Queue Name" text field on the queue edit page
     And I fill "support.shoe@papaltd.com" in the "Queue Email" text field on the queue edit page
     And I uncheck the "Send Email to Members" checkbox on the queue edit page
     And I move "Customer" from the "Available Objects" list to the "Selected Objects" list on the queue edit page

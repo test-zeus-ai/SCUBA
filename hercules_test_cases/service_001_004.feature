@@ -1,6 +1,7 @@
 Feature: SCUBA benchmark case service_001_004 - Create the tech support specialists queue
 
   # Original request: I need a queue named "tech support specialists": send notification emails to members of the tech.support@innovatetech.com distribution list, attach the Case object, and add Alice Bob as a member.
+  # Interpretation: Queue Name "tech_support_specialists" <- Salesforce API name for the queue label "tech support specialists" (spaces become underscores)
   # Interpretation: Queue Email "tech.support@innovatetech.com" with "Send Email to Members" unchecked <- "send notification emails to members of the tech.support@innovatetech.com distribution list"
   # Interpretation: Member "User: Alice Bob" <- "add Alice Bob as a member"
 
@@ -14,6 +15,7 @@ Feature: SCUBA benchmark case service_001_004 - Create the tech support speciali
     And I click the "New" button on the "Queues" page
     And I wait until the queue edit page shows the "Label" field
     And I fill "tech support specialists" in the "Label" text field on the queue edit page
+    And I fill "tech_support_specialists" in the "Queue Name" text field on the queue edit page
     And I fill "tech.support@innovatetech.com" in the "Queue Email" text field on the queue edit page
     And I uncheck the "Send Email to Members" checkbox on the queue edit page
     And I move "Case" from the "Available Objects" list to the "Selected Objects" list on the queue edit page
