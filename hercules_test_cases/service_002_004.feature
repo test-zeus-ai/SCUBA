@@ -1,7 +1,7 @@
 Feature: SCUBA benchmark case service_002_004 - Create the ratings assignment rule
 
   # Original request: Add an assignment rule named ratings that assigns accounts whose Rating is anything other than Cold to Security User. Set its sort order to 1.
-  # Interpretation: Criteria field "Account: Account Rating" <- "accounts whose Rating"
+  # Interpretation: Criteria field "Account: Rating" <- "accounts whose Rating"
   # Interpretation: Assignee type "User" named "Security User" <- "to Security User"
 
   Scenario: Support administrator creates the ratings assignment rule
@@ -21,7 +21,7 @@ Feature: SCUBA benchmark case service_002_004 - Create the ratings assignment ru
     And I click the "New" button in the "Rule Entries" section
     And I wait until the rule entry edit page shows the "Sort Order" field
     And I fill "1" in the "Sort Order" text field on the rule entry edit page
-    And I select "Account: Account Rating" from the "Field 1" picklist on the rule entry edit page
+    And I select "Account: Rating" from the "Field 1" picklist on the rule entry edit page
     And I select "not equal to" from the "Operator 1" picklist on the rule entry edit page
     And I fill "Cold" in the "Value 1" text field on the rule entry edit page
     And I select "User" from the assignee type picklist in the "Select the user or queue to assign the case to" section
@@ -29,4 +29,4 @@ Feature: SCUBA benchmark case service_002_004 - Create the ratings assignment ru
     And I click the "Save" button on the rule entry edit page
     And If the rule entry edit page asks to choose between matching users, select the Security User user and click the "Save" button again
     And I wait until the "ratings" assignment rule detail page is ready
-    Then the "Rule Entries" section should show the criteria Account Rating not equal to "Cold", assigned to the user Security User, with Sort Order 1
+    Then the "Rule Entries" section should show the criteria Rating not equal to "Cold", assigned to the user Security User, with Sort Order 1
