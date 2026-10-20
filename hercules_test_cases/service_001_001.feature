@@ -15,12 +15,11 @@ Feature: SCUBA benchmark case service_001_001 - Create the Shoe Case Support que
     And I fill "Shoe Case Support" in the "Label" text field on the queue edit page
     And I fill "support.shoe@papaltd.com" in the "Queue Email" text field on the queue edit page
     And I uncheck the "Send Email to Members" checkbox on the queue edit page
-    And I select "Customer" from the "Available Objects" list on the queue edit page
-    And I click the "Add" arrow between the "Available Objects" and "Selected Objects" lists
+    And I move "Customer" from the "Available Objects" list to the "Selected Objects" list on the queue edit page
     And I select "Roles" from the "Search" picklist in the "Queue Members" section
-    And I wait until the "Available Members" list shows "Role: Customer Support, North America"
-    And I select "Role: Customer Support, North America" from the "Available Members" list on the queue edit page
-    And I click the "Add" arrow between the "Available Members" and "Selected Members" lists
+    And I fill "Customer Support, North America" in the "for:" text field in the "Queue Members" section
+    And I click the "Find" button in the "Queue Members" section
+    And I move "Role: Customer Support, North America" from the "Available Members" list to the "Selected Members" list on the queue edit page
     And I click the "Save" button on the queue edit page
     And I wait until the "Shoe Case Support" queue detail page is ready
     Then the "Shoe Case Support" queue should show Queue Email "support.shoe@papaltd.com", Supported Object "Customer" and the member "Customer Support, North America"
