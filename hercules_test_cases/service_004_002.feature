@@ -8,8 +8,7 @@ Feature: SCUBA benchmark case service_004_002 - Update the "Feature Request: Dar
     When I click the "App Launcher" button
     And I click the "Cases" item in the App Launcher
     And I wait until the "Recently Viewed" list view for Cases is ready
-    And I click the "Select a List View: Cases" button
-    And I click the "All Open Cases" option in the list view menu
+    And I select "All Open Cases" from the "Select a List View: Cases" list view menu
     And I wait until the "All Open Cases" list view is ready
     And I search for "Feature Request: Dark Mode Support" in the "Search this list..." search field and press Enter
     And I click the case link whose Subject is "Feature Request: Dark Mode Support" in the Cases list

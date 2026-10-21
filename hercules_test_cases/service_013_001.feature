@@ -23,4 +23,5 @@ Feature: SCUBA benchmark case service_013_001 - Raise an incident
     And I wait until the Incident record page shows Priority "Moderate"
     Then the Incident record page should show Subject "battery performance degradation in portable charging devices", Impact "Low", Urgency "Medium" and Priority "Moderate"
     When I click the "Related" tab on the Incident record page
+    And If a "Show More" button is shown on the "Related" tab, I click it
     Then the "Related" tab on the Incident record page should show its related lists

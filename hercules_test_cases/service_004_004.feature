@@ -8,8 +8,7 @@ Feature: SCUBA benchmark case service_004_004 - Update the "Data Synchronization
     When I click the "App Launcher" button
     And I click the "Cases" item in the App Launcher
     And I wait until the "Recently Viewed" list view for Cases is ready
-    And I click the "Select a List View: Cases" button
-    And I click the "All Open Cases" option in the list view menu
+    And I select "All Open Cases" from the "Select a List View: Cases" list view menu
     And I wait until the "All Open Cases" list view is ready
     And I search for "Data Synchronization Issue" in the "Search this list..." search field and press Enter
     And I click the case link whose Subject is "Data Synchronization Issue" in the Cases list
