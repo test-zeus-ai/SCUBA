@@ -7,4 +7,5 @@ Feature: SCUBA benchmark case admin_039_004 - Which permission set group grants 
     When I read the PermissionSetGroup records named "Product Admin", "Commerce_Shopper" and "Trainee Analyst", with their Ids and names
     And I read the PermissionSet records that represent those permission set groups, with their Ids and PermissionSetGroupId
     And I read the ObjectPermissions records on the "Account" object for those permission set Ids, with ParentId and PermissionsDelete
+    And I note that a listed group that does not exist, or has no Account ObjectPermissions record, grants no Delete on Account
     Then I answer with only the exact name of the one permission set group that grants Delete on Account

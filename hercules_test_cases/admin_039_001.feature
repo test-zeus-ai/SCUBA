@@ -6,5 +6,5 @@ Feature: SCUBA benchmark case admin_039_001 - Can the Account Access permission 
     Given I am signed in to the Salesforce Lightning app
     When I read the PermissionSet whose Label is exactly "Account Access", with its Id and Label
     And I read the ObjectPermissions record for that permission set Id on the "Account" object, with ParentId, SobjectType and PermissionsDelete
-    And I note that no ObjectPermissions record for the "Account" object means the permission set grants no access to Account
+    And I note that if no permission set has that label, or it has no ObjectPermissions record for the "Account" object, it grants no access to Account
     Then I answer with only "yes" if the "Account Access" permission set grants Delete on Account, otherwise "no"
