@@ -24,7 +24,7 @@ Feature: SCUBA benchmark case service_002_004 - Create the ratings assignment ru
     And I select "Account: Rating" from the "Field 1" picklist on the rule entry edit page
     And I select "not equal to" from the "Operator 1" picklist on the rule entry edit page
     And I fill "Cold" in the "Value 1" text field on the rule entry edit page
-    And I select "User" from the assignee type picklist in the "Select the user or queue to assign the case to" section
+    And I select "User" from the "Search scope" picklist in the "Select the user or queue to assign the case to" section
     And I fill "Security User" in the assignee text field in the "Select the user or queue to assign the case to" section
     And I click the "Save" button on the rule entry edit page
     And If the rule entry edit page asks to choose between matching users, select the Security User user and click the "Save" button again

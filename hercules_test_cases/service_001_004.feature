@@ -19,7 +19,6 @@ Feature: SCUBA benchmark case service_001_004 - Create the tech support speciali
     And I fill "tech.support@innovatetech.com" in the "Queue Email" text field on the queue edit page
     And I uncheck the "Send Email to Members" checkbox on the queue edit page
     And I move "Case" from the "Available Objects" list to the "Selected Objects" list on the queue edit page
-    And I select "Users" from the "Search" picklist in the "Queue Members" section
     And I fill "Alice Bob" in the "for:" text field in the "Queue Members" section
     And I click the "Find" button in the "Queue Members" section
     And I move "User: Alice Bob" from the "Available Members" list to the "Selected Members" list on the queue edit page

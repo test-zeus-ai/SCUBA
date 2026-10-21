@@ -18,11 +18,10 @@ Feature: SCUBA benchmark case service_001_003 - Create the Marketing Support que
     And I fill "marketing.support@business.com" in the "Queue Email" text field on the queue edit page
     And I uncheck the "Send Email to Members" checkbox on the queue edit page
     And I move "Attribute Picklist" from the "Available Objects" list to the "Selected Objects" list on the queue edit page
-    And I select "Users" from the "Search" picklist in the "Queue Members" section
     And I fill "Integration User" in the "for:" text field in the "Queue Members" section
     And I click the "Find" button in the "Queue Members" section
     And I move "User: Integration User" from the "Available Members" list to the "Selected Members" list on the queue edit page
-    And I select "Roles" from the "Search" picklist in the "Queue Members" section
+    And I select "Roles" from the "Search:" picklist in the "Queue Members" section
     And I fill "Marketing Team" in the "for:" text field in the "Queue Members" section
     And I click the "Find" button in the "Queue Members" section
     And I move "Role: Marketing Team" from the "Available Members" list to the "Selected Members" list on the queue edit page

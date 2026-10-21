@@ -16,11 +16,9 @@ Feature: SCUBA benchmark case service_001_005 - Create the enterprise client sup
     And I fill "enterprise client support" in the "Label" text field on the queue edit page
     And I fill "enterprise_client_support" in the "Queue Name" text field on the queue edit page
     And I move "Case" from the "Available Objects" list to the "Selected Objects" list on the queue edit page
-    And I select "Users" from the "Search" picklist in the "Queue Members" section
     And I fill "Alice Bob" in the "for:" text field in the "Queue Members" section
     And I click the "Find" button in the "Queue Members" section
     And I move "User: Alice Bob" from the "Available Members" list to the "Selected Members" list on the queue edit page
-    And I select "Users" from the "Search" picklist in the "Queue Members" section
     And I fill "Sofia Bennett" in the "for:" text field in the "Queue Members" section
     And I click the "Find" button in the "Queue Members" section
     And I move "User: Sofia Bennett" from the "Available Members" list to the "Selected Members" list on the queue edit page

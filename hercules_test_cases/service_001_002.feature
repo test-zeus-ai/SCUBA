@@ -15,11 +15,10 @@ Feature: SCUBA benchmark case service_001_002 - Create the VIP Support queue
     And I fill "VIP Support" in the "Label" text field on the queue edit page
     And I fill "VIP_Support" in the "Queue Name" text field on the queue edit page
     And I move "Buyer Group" from the "Available Objects" list to the "Selected Objects" list on the queue edit page
-    And I select "Roles" from the "Search" picklist in the "Queue Members" section
+    And I select "Roles" from the "Search:" picklist in the "Queue Members" section
     And I fill "SVP, Customer Service & Support" in the "for:" text field in the "Queue Members" section
     And I click the "Find" button in the "Queue Members" section
     And I move "Role: SVP, Customer Service & Support" from the "Available Members" list to the "Selected Members" list on the queue edit page
-    And I select "Roles" from the "Search" picklist in the "Queue Members" section
     And I fill "Customer Support, International" in the "for:" text field in the "Queue Members" section
     And I click the "Find" button in the "Queue Members" section
     And I move "Role: Customer Support, International" from the "Available Members" list to the "Selected Members" list on the queue edit page
