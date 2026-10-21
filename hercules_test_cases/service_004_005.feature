@@ -8,9 +8,8 @@ Feature: SCUBA benchmark case service_004_005 - Update the "Account Billing Disc
     When I click the "App Launcher" button
     And I click the "Cases" item in the App Launcher
     And I wait until the "Recently Viewed" list view for Cases is ready
-    And I select "All Open Cases" from the "Select a List View: Cases" list view menu
-    And I wait until the "All Open Cases" list view is ready
     And I search for "Account Billing Discrepancy" in the "Search this list..." search field and press Enter
+    And If the Cases list shows no case with Subject "Account Billing Discrepancy", I select "All Open Cases" from the "Select a List View: Cases" list view menu and search for "Account Billing Discrepancy" again
     And I click the case link whose Subject is "Account Billing Discrepancy" in the Cases list
     And I wait until the Case record page for "Account Billing Discrepancy" opens
     And I click the "Edit" button on the Case record page

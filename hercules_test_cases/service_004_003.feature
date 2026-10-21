@@ -7,9 +7,8 @@ Feature: SCUBA benchmark case service_004_003 - Update the "Payment Processing E
     When I click the "App Launcher" button
     And I click the "Cases" item in the App Launcher
     And I wait until the "Recently Viewed" list view for Cases is ready
-    And I select "All Open Cases" from the "Select a List View: Cases" list view menu
-    And I wait until the "All Open Cases" list view is ready
     And I search for "Payment Processing Error" in the "Search this list..." search field and press Enter
+    And If the Cases list shows no case with Subject "Payment Processing Error", I select "All Open Cases" from the "Select a List View: Cases" list view menu and search for "Payment Processing Error" again
     And I click the case link whose Subject is "Payment Processing Error" in the Cases list
     And I wait until the Case record page for "Payment Processing Error" opens
     And I click the "Edit" button on the Case record page
