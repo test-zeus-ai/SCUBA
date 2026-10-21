@@ -13,16 +13,12 @@ Feature: SCUBA benchmark case sales_001_004 - Create the TechFlow Solutions acco
     And I fill "TechFlow Solutions" in the "Account Name" text field
     And I click the "Save" button in the "New Account" modal
     And I wait until the Account record page for "TechFlow Solutions" opens
-    And I click the "App Launcher" button
-    And I click the "Contacts" item in the App Launcher
-    And I wait until the "Recently Viewed" list view for Contacts is ready
-    And I click the "New" button on the Contacts list
+    And I click the "Related" tab on the Account record page
+    And I click the "New" button in the "Contacts" related list
     And I wait until the "New Contact" modal is ready
     And I fill "Sarah" in the "First Name" text field in the "New Contact" modal
     And I fill "Mitchell" in the "Last Name" text field in the "New Contact" modal
-    And I search for "TechFlow Solutions" in the "Account Name" lookup
-    And I select the exact matching account "TechFlow Solutions"
-    And I wait until the "Account Name" lookup shows "TechFlow Solutions"
+    And I wait until the "Account Name" field in the "New Contact" modal shows "TechFlow Solutions"
     And I fill "IT Director" in the "Title" text field in the "New Contact" modal
     And I fill "(555) 123-4567" in the "Phone" text field in the "New Contact" modal
     And I fill "sarah.mitchell@techflowsolutions.com" in the "Email" text field in the "New Contact" modal

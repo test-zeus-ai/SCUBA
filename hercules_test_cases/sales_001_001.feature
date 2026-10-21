@@ -12,16 +12,12 @@ Feature: SCUBA benchmark case sales_001_001 - Create the Old Balance account and
     And I fill "Old Balance" in the "Account Name" text field
     And I click the "Save" button in the "New Account" modal
     And I wait until the Account record page for "Old Balance" opens
-    And I click the "App Launcher" button
-    And I click the "Contacts" item in the App Launcher
-    And I wait until the "Recently Viewed" list view for Contacts is ready
-    And I click the "New" button on the Contacts list
+    And I click the "Related" tab on the Account record page
+    And I click the "New" button in the "Contacts" related list
     And I wait until the "New Contact" modal is ready
     And I fill "Marcus" in the "First Name" text field in the "New Contact" modal
     And I fill "Roth" in the "Last Name" text field in the "New Contact" modal
-    And I search for "Old Balance" in the "Account Name" lookup
-    And I select the exact matching account "Old Balance"
-    And I wait until the "Account Name" lookup shows "Old Balance"
+    And I wait until the "Account Name" field in the "New Contact" modal shows "Old Balance"
     And I fill "888-333-222" in the "Mobile" text field in the "New Contact" modal
     And I fill "marcus.roth@oldbalance.com" in the "Email" text field in the "New Contact" modal
     And I click the "Save" button in the "New Contact" modal

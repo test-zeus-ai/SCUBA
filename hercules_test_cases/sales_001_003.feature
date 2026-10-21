@@ -12,16 +12,12 @@ Feature: SCUBA benchmark case sales_001_003 - Create the GreenTrail Logistics ac
     And I fill "GreenTrail Logistics" in the "Account Name" text field
     And I click the "Save" button in the "New Account" modal
     And I wait until the Account record page for "GreenTrail Logistics" opens
-    And I click the "App Launcher" button
-    And I click the "Contacts" item in the App Launcher
-    And I wait until the "Recently Viewed" list view for Contacts is ready
-    And I click the "New" button on the Contacts list
+    And I click the "Related" tab on the Account record page
+    And I click the "New" button in the "Contacts" related list
     And I wait until the "New Contact" modal is ready
     And I fill "Emily" in the "First Name" text field in the "New Contact" modal
     And I fill "Zhao" in the "Last Name" text field in the "New Contact" modal
-    And I search for "GreenTrail Logistics" in the "Account Name" lookup
-    And I select the exact matching account "GreenTrail Logistics"
-    And I wait until the "Account Name" lookup shows "GreenTrail Logistics"
+    And I wait until the "Account Name" field in the "New Contact" modal shows "GreenTrail Logistics"
     And I fill "emily.zhao@greentrail.com" in the "Email" text field in the "New Contact" modal
     And I click the "Save" button in the "New Contact" modal
     And I wait until the Contact record page for "Emily Zhao" opens

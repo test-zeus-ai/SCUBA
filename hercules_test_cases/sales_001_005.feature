@@ -13,16 +13,12 @@ Feature: SCUBA benchmark case sales_001_005 - Create the Global Manufacturing Co
     And I fill "Global Manufacturing Corp" in the "Account Name" text field
     And I click the "Save" button in the "New Account" modal
     And I wait until the Account record page for "Global Manufacturing Corp" opens
-    And I click the "App Launcher" button
-    And I click the "Contacts" item in the App Launcher
-    And I wait until the "Recently Viewed" list view for Contacts is ready
-    And I click the "New" button on the Contacts list
+    And I click the "Related" tab on the Account record page
+    And I click the "New" button in the "Contacts" related list
     And I wait until the "New Contact" modal is ready
     And I fill "Michael" in the "First Name" text field in the "New Contact" modal
     And I fill "Chen" in the "Last Name" text field in the "New Contact" modal
-    And I search for "Global Manufacturing Corp" in the "Account Name" lookup
-    And I select the exact matching account "Global Manufacturing Corp"
-    And I wait until the "Account Name" lookup shows "Global Manufacturing Corp"
+    And I wait until the "Account Name" field in the "New Contact" modal shows "Global Manufacturing Corp"
     And I fill "VP of Operations" in the "Title" text field in the "New Contact" modal
     And I fill "(555) 987-6543" in the "Phone" text field in the "New Contact" modal
     And I fill "m.chen@globalmanufacturing.com" in the "Email" text field in the "New Contact" modal

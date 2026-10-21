@@ -14,9 +14,13 @@ Feature: SCUBA benchmark case service_014_001 - Raise a change request for an in
     And I fill "implement redundant authentication servers to prevent future service outages" in the "Description" textarea in the "New Change Request" modal
     And I select "High" from the "Priority" picklist in the "New Change Request" modal
     And I select "Medium" from the "Impact" picklist in the "New Change Request" modal
-    And I select "Low" from the "Risk Level" picklist in the "New Change Request" modal
     And I click the "Save" button in the "New Change Request" modal
     And I wait until the Change Request record page opens
+    And I click the "Details" tab on the Change Request record page
+    And I click the "Edit Risk Level" button on the Change Request record page
+    And I select "Low" from the "Risk Level" picklist on the Change Request record page
+    And I click the "Save" button on the Change Request record page
+    And I wait until the Change Request record page shows Risk Level "Low"
     And I click the "Related" tab on the Change Request record page
     And I click the "New" button in the "Related Issues" related list
     And I wait until the new related issue form is ready
