@@ -1,6 +1,6 @@
 Feature: SCUBA benchmark case admin_039_005 - Which object the Buyer permission set can delete
 
-  # Original request: Inspect the Buyer permission set and compare its object permissions for the Account and Order Obejcts.Which one has the delete priviledge?  Answer the question with the precise object API Name.
+  # Original request: Inspect the Buyer permission set and compare its object permissions for the Account and Order Obejcts.Which one has the delete priviledge? Answer the question with the precise object API Name.
 
   Scenario: Administrator compares the Buyer permission set on Account and Order
     Given I am signed in to the Salesforce Lightning app
