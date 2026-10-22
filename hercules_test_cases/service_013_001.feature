@@ -23,25 +23,24 @@ Feature: SCUBA benchmark case service_013_001 - Raise an incident
     And I select "Moderate" from the "Priority" picklist on the Incident record page
     And I click the "Save" button on the Incident record page
     And I wait until the Incident record page shows Priority "Moderate"
-    And I click the "Related" tab on the Incident record page
-    And I scroll until the "Related Assets or Products" related list header and its "New" button are in view
-    And I click the "New" button in the "Related Assets or Products" related list header
+    Then the Incident record page should show Subject "battery performance degradation in portable charging devices", Impact "Low", Urgency "Medium" and Priority "Moderate"
+    When I click the "Related" tab on the Incident record page
+    And I click the "Related Assets or Products" related list title link on the "Related" tab
+    And I wait until the "Related Assets or Products" related list page is ready
+    And I click the "New" button on the "Related Assets or Products" related list page
     And I wait until the new related asset or product form shows the "Product" lookup
     And I search for "PowerCell X1" in the "Product" lookup
     And I select the exact matching product "PowerCell X1"
     And I wait until the "Product" lookup shows "PowerCell X1"
     And I select "Partially Business-Blocking" from the "Impact Type" picklist in the new related asset or product form
     And I click the "Save" button in the new related asset or product form
-    And I wait until the Incident record page is shown again
-    And I click the "Related" tab on the Incident record page
-    And I scroll until the "Related Assets or Products" related list header and its "New" button are in view
-    And I click the "New" button in the "Related Assets or Products" related list header
+    And I wait until the "Related Assets or Products" related list page shows "PowerCell X1"
+    And I click the "New" button on the "Related Assets or Products" related list page
     And I wait until the new related asset or product form shows the "Product" lookup
     And I search for "EnergyBoost Max" in the "Product" lookup
     And I select the exact matching product "EnergyBoost Max"
     And I wait until the "Product" lookup shows "EnergyBoost Max"
     And I select "Not Business-Blocking" from the "Impact Type" picklist in the new related asset or product form
     And I click the "Save" button in the new related asset or product form
-    And I wait until the Incident record page is shown again
-    Then the Incident record page should show Subject "battery performance degradation in portable charging devices", Impact "Low", Urgency "Medium" and Priority "Moderate"
-    And the "Related Assets or Products" related list should show "PowerCell X1" with Impact Type "Partially Business-Blocking" and "EnergyBoost Max" with Impact Type "Not Business-Blocking"
+    And I wait until the "Related Assets or Products" related list page shows "EnergyBoost Max"
+    Then the "Related Assets or Products" related list page should show "PowerCell X1" with Impact Type "Partially Business-Blocking" and "EnergyBoost Max" with Impact Type "Not Business-Blocking"

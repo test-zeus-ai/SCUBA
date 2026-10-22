@@ -21,15 +21,16 @@ Feature: SCUBA benchmark case service_013_002 - Raise an incident
     And I select "High" from the "Priority" picklist on the Incident record page
     And I click the "Save" button on the Incident record page
     And I wait until the Incident record page shows Priority "High"
-    And I click the "Related" tab on the Incident record page
-    And I scroll until the "Related Assets or Products" related list header and its "New" button are in view
-    And I click the "New" button in the "Related Assets or Products" related list header
+    Then the Incident record page should show Subject "data corruption in storage systems", Impact "High", Urgency "High" and Priority "High"
+    When I click the "Related" tab on the Incident record page
+    And I click the "Related Assets or Products" related list title link on the "Related" tab
+    And I wait until the "Related Assets or Products" related list page is ready
+    And I click the "New" button on the "Related Assets or Products" related list page
     And I wait until the new related asset or product form shows the "Product" lookup
     And I search for "StorageMax Pro" in the "Product" lookup
     And I select the exact matching product "StorageMax Pro"
     And I wait until the "Product" lookup shows "StorageMax Pro"
     And I select "Business-Blocking" from the "Impact Type" picklist in the new related asset or product form
     And I click the "Save" button in the new related asset or product form
-    And I wait until the Incident record page is shown again
-    Then the Incident record page should show Subject "data corruption in storage systems", Impact "High", Urgency "High" and Priority "High"
-    And the "Related Assets or Products" related list should show "StorageMax Pro" with Impact Type "Business-Blocking"
+    And I wait until the "Related Assets or Products" related list page shows "StorageMax Pro"
+    Then the "Related Assets or Products" related list page should show "StorageMax Pro" with Impact Type "Business-Blocking"
