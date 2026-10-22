@@ -1,6 +1,7 @@
 Feature: SCUBA benchmark case service_013_004 - Raise an incident
 
   # Original request: Multiple customers have reported slow response times with the DataFlow X2 and ProcessEngine Max workflow systems, affecting their operational efficiency. This is causing not business blocking impact to both products as workarounds are available. Create an incident record with the following details: Subject: performance degradation in workflow systems; Urgency: low; Impact: low; Priority: low.
+  # Interpretation: Impact Type "Not Business-Blocking" <- "This is causing not business blocking impact to both products"
 
   Scenario: Support agent raises the "performance degradation in workflow systems" incident
     Given I am signed in to the Salesforce Lightning app

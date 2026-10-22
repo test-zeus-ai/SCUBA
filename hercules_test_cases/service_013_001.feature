@@ -2,6 +2,8 @@ Feature: SCUBA benchmark case service_013_001 - Raise an incident
 
   # Original request: Can you open an incident for widespread battery drain on our portable chargers? Multiple customers are seeing the PowerCell X1 and EnergyBoost Max losing charge quickly, disrupting daily operations. Note: PowerCell X1 is partially business blocking, while EnergyBoost Max isn’t blocking since some functions still work. Use these fields—Subject: battery performance degradation in portable charging devices; Urgency: medium; Impact: low; Priority: medium.
   # Interpretation: Priority "Moderate" <- "Priority: medium" (the Incident priority values are Critical, High, Moderate and Low)
+  # Interpretation: Impact Type "Partially Business-Blocking" <- "PowerCell X1 is partially business blocking"
+  # Interpretation: Impact Type "Not Business-Blocking" <- "EnergyBoost Max isn’t blocking"
 
   Scenario: Support agent raises the "battery performance degradation in portable charging devices" incident
     Given I am signed in to the Salesforce Lightning app

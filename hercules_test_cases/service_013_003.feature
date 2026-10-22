@@ -2,6 +2,7 @@ Feature: SCUBA benchmark case service_013_003 - Raise an incident
 
   # Original request: Heads up—there are 5 new cases about users failing to log in on SecureAuth Pro and AccessGuard, our authentication products. Customers say it’s partially business blocking for their security workflows. Create an incident with these details—Subject: authentication failures in security systems; Urgency: medium; Impact: medium; Priority: medium.
   # Interpretation: Priority "Moderate" <- "Priority: medium" (the Incident priority values are Critical, High, Moderate and Low)
+  # Interpretation: Impact Type "Partially Business-Blocking" <- "it’s partially business blocking"
 
   Scenario: Support agent raises the "authentication failures in security systems" incident
     Given I am signed in to the Salesforce Lightning app

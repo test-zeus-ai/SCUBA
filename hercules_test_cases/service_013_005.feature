@@ -1,6 +1,7 @@
 Feature: SCUBA benchmark case service_013_005 - Raise an incident
 
   # Original request: Urgent request: there are 8 new cases of overheating on the ThermalMax Pro and CoolBreeze Elite systems—our latest HVAC line—and it’s blocking facility operations for customers. Raise an incident with—Subject: overheating defects in HVAC cooling systems; Urgency: high; Impact: high; Priority: high.
+  # Interpretation: Impact Type "Business-Blocking" <- "it’s blocking facility operations"
 
   Scenario: Support agent raises the "overheating defects in HVAC cooling systems" incident
     Given I am signed in to the Salesforce Lightning app

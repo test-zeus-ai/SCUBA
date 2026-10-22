@@ -1,6 +1,7 @@
 Feature: SCUBA benchmark case service_013_002 - Raise an incident
 
   # Original request: There are 12 new cases complaining about data corruption issues with the StorageMax Pro system, our primary data storage product. This is causing business blocking impact for customers' data operations. Create an incident record with the following details: Subject: data corruption in storage systems; Urgency: high; Impact: high; Priority: high.
+  # Interpretation: Impact Type "Business-Blocking" <- "This is causing business blocking impact"
 
   Scenario: Support agent raises the "data corruption in storage systems" incident
     Given I am signed in to the Salesforce Lightning app
