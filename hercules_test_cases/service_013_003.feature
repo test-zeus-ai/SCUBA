@@ -21,4 +21,25 @@ Feature: SCUBA benchmark case service_013_003 - Raise an incident
     And I select "Moderate" from the "Priority" picklist on the Incident record page
     And I click the "Save" button on the Incident record page
     And I wait until the Incident record page shows Priority "Moderate"
+    And I click the "Related" tab on the Incident record page
+    And I scroll until the "Related Assets or Products" related list header and its "New" button are in view
+    And I click the "New" button in the "Related Assets or Products" related list header
+    And I wait until the new related asset or product form shows the "Product" lookup
+    And I search for "SecureAuth Pro" in the "Product" lookup
+    And I select the exact matching product "SecureAuth Pro"
+    And I wait until the "Product" lookup shows "SecureAuth Pro"
+    And I select "Partially Business-Blocking" from the "Impact Type" picklist in the new related asset or product form
+    And I click the "Save" button in the new related asset or product form
+    And I wait until the Incident record page is shown again
+    And I click the "Related" tab on the Incident record page
+    And I scroll until the "Related Assets or Products" related list header and its "New" button are in view
+    And I click the "New" button in the "Related Assets or Products" related list header
+    And I wait until the new related asset or product form shows the "Product" lookup
+    And I search for "AccessGuard" in the "Product" lookup
+    And I select the exact matching product "AccessGuard"
+    And I wait until the "Product" lookup shows "AccessGuard"
+    And I select "Partially Business-Blocking" from the "Impact Type" picklist in the new related asset or product form
+    And I click the "Save" button in the new related asset or product form
+    And I wait until the Incident record page is shown again
     Then the Incident record page should show Subject "authentication failures in security systems", Impact "Medium", Urgency "Medium" and Priority "Moderate"
+    And the "Related Assets or Products" related list should show "SecureAuth Pro" with Impact Type "Partially Business-Blocking" and "AccessGuard" with Impact Type "Partially Business-Blocking"
