@@ -23,6 +23,7 @@ Feature: SCUBA benchmark case service_013_001 - Raise an incident
     And I wait until the Incident record page shows Priority "Moderate"
     Then the Incident record page should show Subject "battery performance degradation in portable charging devices", Impact "Low", Urgency "Medium" and Priority "Moderate"
     When I click the "Related" tab on the Incident record page
-    And I click the "New" button in the "Related Assets or Products" related list
+    And I scroll until the "Related Assets or Products" related list header and its "New" button are in view
+    And I click the "New" button in the "Related Assets or Products" related list header
     And I wait until the new related asset or product form is ready
     Then the new related asset or product form should show its fields
