@@ -1,7 +1,7 @@
 Feature: SCUBA benchmark case admin_014_002 - Create the Lead Phone Match matching rule
 
   # Original request: Build a Lead matching rule named "Lead Phone Match" where the Phone field uses the Fuzzy method. Also, don’t count empty values—leave the Match Blank Field box unchecked.
-  # Interpretation: Matching Method "Fuzzy" <- the request asks for fuzzy matching on Phone
+  # Interpretation: Matching Method "Fuzzy: Phone" <- the request asks for fuzzy matching on Phone
 
   Scenario: Administrator creates the "Lead Phone Match" matching rule on Lead
     Given I am signed in to the Salesforce Lightning app
@@ -17,8 +17,8 @@ Feature: SCUBA benchmark case admin_014_002 - Create the Lead Phone Match matchi
     And I wait until the "Rule Name" field is shown on the matching rule edit page
     And I fill "Lead Phone Match" in the "Rule Name" text field on the matching rule edit page
     And I select "Phone" from the "Field" picklist in matching criteria row 1
-    And I select "Fuzzy" from the "Matching Method" picklist in matching criteria row 1
+    And I select "Fuzzy: Phone" from the "Matching Method" picklist in matching criteria row 1
     And I make sure the "Match Blank Fields" checkbox in matching criteria row 1 is unchecked
     And I click the "Save" button on the matching rule edit page
     And I wait until the "Lead Phone Match" matching rule detail page is ready
-    Then the "Lead Phone Match" matching rule should show the criterion Phone with Matching Method "Fuzzy" and Match Blank Fields off
+    Then the "Lead Phone Match" matching rule should show the criterion Phone with Matching Method "Fuzzy: Phone" and Match Blank Fields off
