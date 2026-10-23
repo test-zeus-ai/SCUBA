@@ -20,7 +20,7 @@ Feature: SCUBA benchmark case admin_003_001 - Create the UnimportantCasesRPT rep
     And I click the "Filters" tab in the report builder
     And I search for "Status" in the "Add filter..." field and select the "Status" field
     And I select "equals" from the "Operator" picklist in the filter editor
-    And I select "New" from the "Value" options in the filter editor
+    And I check the "New" option in the "Value" list in the filter editor
     And I click the "Apply" button in the filter editor
     And I search for "Date/Time Opened" in the "Add filter..." field and select the "Date/Time Opened" field
     And I select "greater than" from the "Operator" picklist in the filter editor
@@ -28,11 +28,11 @@ Feature: SCUBA benchmark case admin_003_001 - Create the UnimportantCasesRPT rep
     And I click the "Apply" button in the filter editor
     And I search for "Priority" in the "Add filter..." field and select the "Priority" field
     And I select "equals" from the "Operator" picklist in the filter editor
-    And I select "Low" from the "Value" options in the filter editor
+    And I check the "Low" option in the "Value" list in the filter editor
     And I click the "Apply" button in the filter editor
     And I search for "Escalated" in the "Add filter..." field and select the "Escalated" field
     And I select "equals" from the "Operator" picklist in the filter editor
-    And I select "True" from the "Value" options in the filter editor
+    And I check the "True" option in the "Value" list in the filter editor
     And I click the "Apply" button in the filter editor
     And I click the "Add Filter Logic" option in the "Filters" panel menu
     And I fill "(1 OR 2) AND 3 AND NOT 4" in the "Filter Logic" field

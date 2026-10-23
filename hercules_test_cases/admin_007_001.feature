@@ -10,7 +10,6 @@ Feature: SCUBA benchmark case admin_007_001 - Show AnnualRevenue only when Activ
     And I wait until the "Setup Home" page is ready
     And I click the "Object Manager" tab in Setup
     And I wait until the Object Manager list is ready
-    And I search for "Account" in the Object Manager "Quick Find" search field
     And I click the "Account" link in the Object Manager list
     And I wait until the "Account" object details page is ready
     And I click the "Lightning Record Pages" link in the object sidebar

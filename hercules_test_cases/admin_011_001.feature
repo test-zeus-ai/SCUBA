@@ -19,12 +19,12 @@ Feature: SCUBA benchmark case admin_011_001 - Create the Energy Consultations ap
     And I wait until the "Utility Items" step of the wizard is shown
     And I click the "Next" button in the "New Lightning App" wizard
     And I wait until the "Navigation Items" step of the wizard is shown
-    And I move "Tasks" from "Available Items" to "Selected Items" in the "Navigation Items" step
-    And I move "Contacts" from "Available Items" to "Selected Items" in the "Navigation Items" step
+    And I type "Tasks" in the "Available Items" find box and move "Tasks" from "Available Items" to "Selected Items" in the "Navigation Items" step
+    And I type "Contacts" in the "Available Items" find box and move "Contacts" from "Available Items" to "Selected Items" in the "Navigation Items" step
     And I click the "Next" button in the "New Lightning App" wizard
     And I wait until the "User Profiles" step of the wizard is shown
-    And I move "System Administrator" from "Available Profiles" to "Selected Profiles" in the "User Profiles" step
-    And I move "Custom: Sales Profile" from "Available Profiles" to "Selected Profiles" in the "User Profiles" step
+    And I type "System Administrator" in the "Available Profiles" find box and move "System Administrator" from "Available Profiles" to "Selected Profiles" in the "User Profiles" step
+    And I type "Custom: Sales Profile" in the "Available Profiles" find box and move "Custom: Sales Profile" from "Available Profiles" to "Selected Profiles" in the "User Profiles" step
     And I click the "Save & Finish" button in the "New Lightning App" wizard
     And I wait until the "Lightning Experience App Manager" page lists "Energy Consultations"
     Then the "Lightning Experience App Manager" page should list the "Energy Consultations" app

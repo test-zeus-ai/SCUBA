@@ -1,6 +1,7 @@
 Feature: SCUBA benchmark case admin_009_001 - Create the ByAmount Opportunity list view
 
   # Original request: Please create a new list view on the Opportunity object named ByAmount. Show only two columns—Account Name and Amount—and make it visible exclusively to the "CFO" and the "Channel Sales Team".
+  # Interpretation: Group type "Roles" <- "visible exclusively to the \"CFO\" and the \"Channel Sales Team\""
   # Interpretation: Sharing "Share list view with groups of users" <- "make it visible exclusively to the \"CFO\" and the \"Channel Sales Team\""
 
   Scenario: Administrator creates the "ByAmount" list view shared with two groups
@@ -13,6 +14,7 @@ Feature: SCUBA benchmark case admin_009_001 - Create the ByAmount Opportunity li
     And I wait until the "New List View" dialog is ready
     And I fill "ByAmount" in the "List Name" text field in the "New List View" dialog
     And I select the "Share list view with groups of users" option under "Who sees this list view?"
+    And I select "Roles" from the sharing type picklist next to the groups search field in the "New List View" dialog
     And I search for "CFO" in the groups search field in the "New List View" dialog and select the "CFO" result
     And I search for "Channel Sales Team" in the groups search field in the "New List View" dialog and select the "Channel Sales Team" result
     And I click the "Save" button in the "New List View" dialog

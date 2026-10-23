@@ -35,6 +35,6 @@ Feature: SCUBA benchmark case admin_018_001 - Create the Favorite custom object
     And I click the "Solution Manager" link in the Profiles list
     And I wait until the "Solution Manager" profile page is ready
     And I click the "Edit" button on the "Solution Manager" profile page
-    And I check the "Read" checkbox for "Favorites" under "Custom Object Permissions" on the profile edit page
+    And I check the "Read" checkbox in the "Favorites" row of the "Custom Object Permissions" table on the profile edit page
     And I click the "Save" button on the profile edit page
     Then the "Solution Manager" profile should show "Read" access on "Favorites"
