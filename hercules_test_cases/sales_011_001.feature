@@ -1,0 +1,31 @@
+Feature: SCUBA benchmark case sales_011_001 - Create a territory model with an assignment rule
+
+  # Original request: Spin up a new territory model called 'by revenue'. Give its rule the name 'annual revenue is USD'. Filter the selection to accounts where annual revenue is greater than 10,000. If sales territory isn’t enabled yet, please enable it.
+  # Interpretation: Annual Revenue filter value "10000" <- "annual revenue is greater than 10,000"
+
+  Scenario: Sales administrator enables territories and creates the by revenue model
+    Given I am signed in to the Salesforce Lightning app
+    When I click "Setup" in the "Setup" menu in the global header
+    And I wait until the "Setup Home" page is ready
+    And I search for "Territory" in the "Quick Find" search field
+    And I click the "Territory Settings" link in the Setup sidebar
+    And I wait until the "Territory Settings" page is ready
+    And I wait until the "Territory Settings" page shows the "Disable Sales Territory" button, which means sales territory is enabled
+    And I click the "Territory Models" link in the Setup sidebar
+    And I wait until the "Territory Models" page is ready
+    And I click the "New" button on the "Territory Models" page
+    And I wait until the "New Territory Model" page is ready
+    And I fill "by revenue" in the "Label" text field on the "New Territory Model" page
+    And I click the "Save" button on the "New Territory Model" page
+    And I wait until the "by revenue" territory model page is ready
+    And I click the "View Rules" button on the territory model detail page
+    And I wait until the "Object Territory Assignment Rules" page is ready
+    And I click the "New Rule" button on the "Object Territory Assignment Rules" page
+    And I wait until the assignment rule edit page shows the "Rule Name" field
+    And I fill "annual revenue is USD" in the "Rule Name" text field on the assignment rule edit page
+    And I select "Account: Annual Revenue" from the "Field 1" picklist on the assignment rule edit page
+    And I select "greater than" from the "Operator 1" picklist on the assignment rule edit page
+    And I fill "10000" in the "Value 1" text field on the assignment rule edit page
+    And I click the "Save" button on the assignment rule edit page
+    And I wait until the "annual revenue is USD" assignment rule detail page is ready
+    Then the "annual revenue is USD" assignment rule should show the criteria "Annual Revenue" greater than "10000"
